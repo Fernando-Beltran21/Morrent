@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Remolques en Venta — Cama Baja, Caja Seca, Volteo, Car Hauler | Morrent</title>
+  <meta name="description" content="Catálogo de remolques nuevos de fábrica: cama baja, caja seca, volteo, car hauler y remolque para puesto de comida. Cotiza por WhatsApp el modelo que necesitas." />
+
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind (utilidades) + configuración compartida con el resto del sitio -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+
+  <!-- Estilos personalizados (componentes, header, animaciones) -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bg-paper text-ink font-sans overflow-x-hidden relative">
+
+
+  <header id="site-header" data-hero="false" class="site-header header-transparent fixed inset-x-0 top-0 z-50">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 flex items-center justify-between h-20 md:h-24">
+      <a href="index.html" class="flex flex-col leading-none">
+        <span class="brand-name font-display text-3xl md:text-4xl tracking-tightest uppercase">Morrent</span>
+        <span class="brand-tag mt-0.5 font-mono text-[10px] tracking-widest2 uppercase hidden md:block">Playa del Carmen · Cancún · Tulum</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-9">
+        <a href="maquinaria-pesada.html" class="nav-link">Maquinaria Pesada</a>
+        <a href="suministro-agregados.html" class="nav-link">Suministro de Agregados</a>
+        <a href="montacargas.html" class="nav-link">Montacargas</a>
+        <a href="limpieza-playas.html" class="nav-link">Limpieza de Playas</a>
+        <a href="remolques-venta.html" class="nav-link">Remolques en Venta</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <a href="contacto.html" target="_blank" rel="noopener" class="contact-btn hidden md:inline-flex items-center gap-2 border px-5 py-3 font-mono text-xs uppercase tracking-wide transition-colors">Contacto</a>
+        <button id="menu-toggle" aria-expanded="false" aria-label="Abrir menú" class="lg:hidden w-11 h-11 flex flex-col items-center justify-center gap-1.5">
+          <span class="burger-line block w-6 h-0.5"></span>
+          <span class="burger-line block w-6 h-0.5"></span>
+          <span class="burger-line block w-4 h-0.5 self-end"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MENÚ MÓVIL -->
+  <div id="mobile-menu" class="fixed inset-0 z-40 bg-ink translate-x-full transition-transform duration-500 ease-in-out lg:hidden flex flex-col justify-center px-10 gap-6">
+    <a href="#catalogo" class="font-display text-3xl uppercase tracking-tightest text-paper hover:text-yellow transition-colors">Catálogo</a>
+    <a href="maquinaria-pesada.html" class="font-display text-3xl uppercase tracking-tightest text-paper hover:text-yellow transition-colors">Maquinaria Pesada</a>
+    <a href="index.html#servicios" class="font-display text-3xl uppercase tracking-tightest text-paper hover:text-yellow transition-colors">Servicios</a>
+    <a href="contacto.html" class="font-display text-3xl uppercase tracking-tightest text-paper hover:text-yellow transition-colors">Contacto</a>
+    <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%21%21&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mt-6 btn-primary !bg-orange w-fit">Cotizar por WhatsApp</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="relative h-[60vh] min-h-[440px] overflow-hidden mt-20 md:mt-24">
+    <img src="https://picsum.photos/seed/morrent-remolques-hero/1920/1000" alt="Remolque nuevo de fábrica listo para entrega" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent"></div>
+    <div class="relative z-10 h-full mx-auto max-w-[1440px] px-6 md:px-10 flex flex-col justify-end pb-14 md:pb-20">
+      <p class="eyebrow text-yellow reveal">Nuevos de Fábrica · Entrega Inmediata</p>
+      <h1 class="mt-3 text-paper text-[11vw] leading-[0.88] md:text-[5.5vw] font-display tracking-tightest uppercase max-w-5xl reveal" style="transition-delay: 100ms;">
+        Remolques en Venta
+      </h1>
+      <p class="mt-6 text-paper/80 max-w-xl text-sm md:text-base leading-relaxed reveal" style="transition-delay: 200ms;">
+        Cinco líneas de remolques nuevos, listos para trabajar: cama baja, caja seca, volteo, car hauler y puesto de comida.
+      </p>
+    </div>
+  </section>
+
+  <div id="catalogo" class="pt-6"></div>
+
+  <!-- NAV DE CATEGORÍAS (sticky) -->
+  <nav class="sticky top-0 z-30 bg-paper/95 backdrop-blur border-b border-ink/10">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10">
+      <div class="flex gap-6 md:gap-10 overflow-x-auto hide-scrollbar py-4 font-mono text-xs uppercase tracking-widest2">
+        <a href="#cama-baja" class="text-steel hover:text-orange transition-colors whitespace-nowrap">01 · Cama Baja</a>
+        <a href="#caja-seca" class="text-steel hover:text-orange transition-colors whitespace-nowrap">02 · Caja Seca</a>
+        <a href="#volteo" class="text-steel hover:text-orange transition-colors whitespace-nowrap">03 · Volteo</a>
+        <a href="#car-hauler" class="text-steel hover:text-orange transition-colors whitespace-nowrap">04 · Car Hauler</a>
+        <a href="#puesto-comida" class="text-steel hover:text-orange transition-colors whitespace-nowrap">05 · Puesto de Comida</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =============== CATEGORÍA 01: CAMA BAJA =============== -->
+  <section id="cama-baja" class="py-16 md:py-24 scroll-mt-20">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 mb-10 md:mb-14 flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div class="reveal">
+        <p class="section-label">Categoría 01 · 5 Modelos</p>
+        <h2 class="mt-2 text-4xl md:text-6xl font-display tracking-tightest uppercase text-ink">Remolque Cama Baja</h2>
+        <p class="mt-3 text-steel text-sm md:text-base max-w-xl">Plataforma baja para transporte de maquinaria pesada, autos y carga voluminosa con máxima estabilidad.</p>
+      </div>
+    </div>
+
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+
+      <div class="group reveal border border-ink/10 hover:border-orange transition-colors duration-300">
+        <div class="h-40 md:h-44 overflow-hidden bg-haze">
+          <img src="https://picsum.photos/seed/cama-baja-1/500/400" alt="Remolque cama baja modelo 12 pies" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="p-4">
+          <h3 class="font-display text-lg uppercase tracking-tight leading-tight">Capacidad 500 Kg'</h3>
+          <p class="mt-1 text-steel text-xs leading-snug">Ancho 4´ Largo 7´</p>
+          <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%2C%20me%20interesa%20el%20Remolque%20Cama%20Baja%2012%27&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mt-3 w-full btn-whatsapp-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.46 17.5 2 12.04 2Zm5.83 14.03c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.19-1.58-1.19-3.01s.75-2.14 1.02-2.43c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.81 2.01.88 2.16.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.17.29.75 1.24 1.6 2.01 1.1 1 2.03 1.31 2.32 1.46.29.15.46.13.63-.08.17-.21.71-.83.9-1.11.19-.29.38-.24.63-.14.26.1 1.64.77 1.92.91.29.15.48.22.55.34.07.13.07.72-.17 1.4Z"/></svg>
+            Cotizar
+          </a>
+        </div>
+      </div>
+
+      <div class="group reveal border border-ink/10 hover:border-orange transition-colors duration-300" style="transition-delay: 50ms;">
+        <div class="h-40 md:h-44 overflow-hidden bg-haze">
+          <img src="https://picsum.photos/seed/cama-baja-2/500/400" alt="Remolque cama baja modelo 16 pies" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="p-4">
+          <h3 class="font-display text-lg uppercase tracking-tight leading-tight">Capacidad 800 Kg</h3>
+          <p class="mt-1 text-steel text-xs leading-snug">Ancho 4´ Largo 8´</p>
+          <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%2C%20me%20interesa%20el%20Remolque%20Cama%20Baja%2016%27&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mt-3 w-full btn-whatsapp-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.46 17.5 2 12.04 2Zm5.83 14.03c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.19-1.58-1.19-3.01s.75-2.14 1.02-2.43c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.81 2.01.88 2.16.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.17.29.75 1.24 1.6 2.01 1.1 1 2.03 1.31 2.32 1.46.29.15.46.13.63-.08.17-.21.71-.83.9-1.11.19-.29.38-.24.63-.14.26.1 1.64.77 1.92.91.29.15.48.22.55.34.07.13.07.72-.17 1.4Z"/></svg>
+            Cotizar
+          </a>
+        </div>
+      </div>
+
+      <div class="group reveal border border-ink/10 hover:border-orange transition-colors duration-300" style="transition-delay: 100ms;">
+        <div class="h-40 md:h-44 overflow-hidden bg-haze">
+          <img src="https://picsum.photos/seed/cama-baja-3/500/400" alt="Remolque cama baja modelo 20 pies" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="p-4">
+          <h3 class="font-display text-lg uppercase tracking-tight leading-tight">Capacidad 1500 Kg</h3>
+          <p class="mt-1 text-steel text-xs leading-snug">Ancho 5´, 6´, 6.5´ y 7´ Largo 8´, 10´, 12´y 14´</p>
+          <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%2C%20me%20interesa%20el%20Remolque%20Cama%20Baja%2020%27&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mt-3 w-full btn-whatsapp-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.46 17.5 2 12.04 2Zm5.83 14.03c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.19-1.58-1.19-3.01s.75-2.14 1.02-2.43c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.81 2.01.88 2.16.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.17.29.75 1.24 1.6 2.01 1.1 1 2.03 1.31 2.32 1.46.29.15.46.13.63-.08.17-.21.71-.83.9-1.11.19-.29.38-.24.63-.14.26.1 1.64.77 1.92.91.29.15.48.22.55.34.07.13.07.72-.17 1.4Z"/></svg>
+            Cotizar
+          </a>
+        </div>
+      </div>
+
+      <div class="group reveal border border-ink/10 hover:border-orange transition-colors duration-300" style="transition-delay: 150ms;">
+        <div class="h-40 md:h-44 overflow-hidden bg-haze">
+          <img src="https://picsum.photos/seed/cama-baja-4/500/400" alt="Remolque cama baja modelo 25 pies" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="p-4">
+          <h3 class="font-display text-lg uppercase tracking-tight leading-tight">Capacidad 3000 Kg</h3>
+          <p class="mt-1 text-steel text-xs leading-snug">Ancho 5´, 6´, 6.5´y 7´ Largo 10´, 12´, 14´, 16´, 18´ y 20´</p>
+          <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%2C%20me%20interesa%20el%20Remolque%20Cama%20Baja%2025%27&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mt-3 w-full btn-whatsapp-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.46 17.5 2 12.04 2Zm5.83 14.03c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.19-1.58-1.19-3.01s.75-2.14 1.02-2.43c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.81 2.01.88 2.16.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.17.29.75 1.24 1.6 2.01 1.1 1 2.03 1.31 2.32 1.46.29.15.46.13.63-.08.17-.21.71-.83.9-1.11.19-.29.38-.24.63-.14.26.1 1.64.77 1.92.91.29.15.48.22.55.34.07.13.07.72-.17 1.4Z"/></svg>
+            Cotizar
+          </a>
+        </div>
+      </div>
+
+      <div class="group reveal border border-ink/10 hover:border-orange transition-colors duration-300" style="transition-delay: 200ms;">
+        <div class="h-40 md:h-44 overflow-hidden bg-haze">
+          <img src="https://picsum.photos/seed/cama-baja-5/500/400" alt="Remolque cama baja modelo industrial 30 pies" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="p-4">
+          <h3 class="font-display text-lg uppercase tracking-tight leading-tight">Capacidad 6000 Kg</h3>
+          <p class="mt-1 text-steel text-xs leading-snug">Ancho 7´ Largo 14´, 16´, 18´, 20' y 22´</p>
+          <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%2C%20me%20interesa%20el%20Remolque%20Cama%20Baja%2030%27%20Industrial&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mt-3 w-full btn-whatsapp-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.46 17.5 2 12.04 2Zm5.83 14.03c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.19-1.58-1.19-3.01s.75-2.14 1.02-2.43c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.81 2.01.88 2.16.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.17.29.75 1.24 1.6 2.01 1.1 1 2.03 1.31 2.32 1.46.29.15.46.13.63-.08.17-.21.71-.83.9-1.11.19-.29.38-.24.63-.14.26.1 1.64.77 1.92.91.29.15.48.22.55.34.07.13.07.72-.17 1.4Z"/></svg>
+            Cotizar
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =============== CATEGORÍA 02: CAJA SECA =============== -->
+  <section id="caja-seca" class="py-16 md:py-24 bg-haze scroll-mt-20">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 mb-10 md:mb-14 flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div class="reveal">
+        <p class="section-label">Categoría 02 · 4 Modelos</p>
+        <h2 class="mt-2 text-4xl md:text-6xl font-display tracking-tightest uppercase text-ink">Remolque Caja Seca</h2>
+        <p class="mt-3 text-steel text-sm md:text-base max-w-xl">Carga cerrada y protegida del clima, ideal para mercancía, mudanzas y distribución.</p>
+      </div>
+    </div>
+
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+      <div class="group reveal bg-paper border border-ink/10 hover:border-orange transition-colors duration-300">
+        <div class="h-40 md:h-44 overflow-hidden bg-haze">
+          <img src="https://picsum.photos/seed/caja-seca-1/500/400" alt="Remolque caja seca 12 pies" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="p-4">
+          <h3 class="font-display text-lg uppercase tracking-tight leading-tight">Caja Seca 12'</h3>
+          <p class="mt-1 text-steel text-xs leading-snug">Compacta, ideal para reparto local y última milla.</p>
+          <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%2C%20me%20interesa%20el%20Remolque%20Caja%20Seca%2012%27&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mt-3 w-full btn-whatsapp-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.46 17.5 2 12.04 2Zm5.83 14.03c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.19-1.58-1.19-3.01s.75-2.14 1.02-2.43c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.81 2.01.88 2.16.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.17.29.75 1.24 1.6 2.01 1.1 1 2.03 1.31 2.32 1.46.29.15.46.13.63-.08.17-.21.71-.83.9-1.11.19-.29.38-.24.63-.14.26.1 1.64.77 1.92.91.29.15.48.22.55.34.07.13.07.72-.17 1.4Z"/></svg>
+            Cotizar
+          </a>
+        </div>
+      </div>
+
+      <div class="group reveal bg-paper border border-ink/10 hover:border-orange transition-colors duration-300" style="transition-delay: 50ms;">
+        <div class="h-40 md:h-44 overflow-hidden bg-haze">
+          <img src="https://picsum.photos/seed/caja-seca-2/500/400" alt="Remolque caja seca 16 pies" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="p-4">
+          <h3 class="font-display text-lg uppercase tracking-tight leading-tight">Caja Seca 16'</h3>
+          <p class="mt-1 text-steel text-xs leading-snug">Puertas traseras de doble hoja, fácil acceso a la carga.</p>
+          <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%2C%20me%20interesa%20el%20Remolque%20Caja%20Seca%2016%27&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mt-3 w-full btn-whatsapp-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.46 17.5 2 12.04 2Zm5.83 14.03c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.19-1.58-1.19-3.01s.75-2.14 1.02-2.43c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.81 2.01.88 2.16.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.17.29.75 1.24 1.6 2.01 1.1 1 2.03 1.31 2.32 1.46.29.15.46.13.63-.08.17-.21.71-.83.9-1.11.19-.29.38-.24.63-.14.26.1 1.64.77 1.92.91.29.15.48.22.55.34.07.13.07.72-.17 1.4Z"/></svg>
+            Cotizar
+          </a>
+        </div>
+      </div>
+
+      <div class="group reveal bg-paper border border-ink/10 hover:border-orange transition-colors duration-300" style="transition-delay: 100ms;">
+        <div class="h-40 md:h-44 overflow-hidden bg-haze">
+          <img src="https://picsum.photos/seed/caja-seca-3/500/400" alt="Remolque caja seca 20 pies" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="p-4">
+          <h3 class="font-display text-lg uppercase tracking-tight leading-tight">Caja Seca 20'</h3>
+          <p class="mt-1 text-steel text-xs leading-snug">Piso reforzado, mayor volumen para carga paletizada.</p>
+          <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%2C%20me%20interesa%20el%20Remolque%20Caja%20Seca%2020%27&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mt-3 w-full btn-whatsapp-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.46 17.5 2 12.04 2Zm5.83 14.03c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.19-1.58-1.19-3.01s.75-2.14 1.02-2.43c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.81 2.01.88 2.16.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.17.29.75 1.24 1.6 2.01 1.1 1 2.03 1.31 2.32 1.46.29.15.46.13.63-.08.17-.21.71-.83.9-1.11.19-.29.38-.24.63-.14.26.1 1.64.77 1.92.91.29.15.48.22.55.34.07.13.07.72-.17 1.4Z"/></svg>
+            Cotizar
+          </a>
+        </div>
+      </div>
+
+      <div class="group reveal bg-paper border border-ink/10 hover:border-orange transition-colors duration-300" style="transition-delay: 150ms;">
+        <div class="h-40 md:h-44 overflow-hidden bg-haze">
+          <img src="https://picsum.photos/seed/caja-seca-4/500/400" alt="Remolque caja seca 24 pies" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="p-4">
+          <h3 class="font-display text-lg uppercase tracking-tight leading-tight">Caja Seca 24'</h3>
+          <p class="mt-1 text-steel text-xs leading-snug">Rampa de carga integrada, ideal para distribución mayorista.</p>
+          <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%2C%20me%20interesa%20el%20Remolque%20Caja%20Seca%2024%27&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mt-3 w-full btn-whatsapp-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.46 17.5 2 12.04 2Zm5.83 14.03c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.19-1.58-1.19-3.01s.75-2.14 1.02-2.43c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.81 2.01.88 2.16.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.17.29.75 1.24 1.6 2.01 1.1 1 2.03 1.31 2.32 1.46.29.15.46.13.63-.08.17-.21.71-.83.9-1.11.19-.29.38-.24.63-.14.26.1 1.64.77 1.92.91.29.15.48.22.55.34.07.13.07.72-.17 1.4Z"/></svg>
+            Cotizar
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =============== CATEGORÍA 03: VOLTEO =============== -->
+  <section id="volteo" class="py-16 md:py-24 scroll-mt-20">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 mb-10 md:mb-14 flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div class="reveal">
+        <p class="section-label">Categoría 03 · 3 Modelos</p>
+        <h2 class="mt-2 text-4xl md:text-6xl font-display tracking-tightest uppercase text-ink">Remolque Tipo Volteo</h2>
+        <p class="mt-3 text-steel text-sm md:text-base max-w-xl">Descarga hidráulica de material a granel: tierra, grava, arena y escombro.</p>
+      </div>
+    </div>
+
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 grid grid-cols-1 sm:grid-cols-3 gap-5">
+
+      <div class="group reveal border border-ink/10 hover:border-orange transition-colors duration-300">
+        <div class="h-44 md:h-52 overflow-hidden bg-haze">
+          <img src="https://picsum.photos/seed/volteo-r-1/600/450" alt="Remolque volteo 10 m3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="p-5">
+          <h3 class="font-display text-xl uppercase tracking-tight leading-tight">Volteo 10 m³</h3>
+          <p class="mt-1 text-steel text-xs leading-snug">Doble eje, ideal para obra pequeña y mediana.</p>
+          <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%2C%20me%20interesa%20el%20Remolque%20Volteo%2010%20m3&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mt-3 w-full btn-whatsapp-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.46 17.5 2 12.04 2Zm5.83 14.03c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.19-1.58-1.19-3.01s.75-2.14 1.02-2.43c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.81 2.01.88 2.16.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.17.29.75 1.24 1.6 2.01 1.1 1 2.03 1.31 2.32 1.46.29.15.46.13.63-.08.17-.21.71-.83.9-1.11.19-.29.38-.24.63-.14.26.1 1.64.77 1.92.91.29.15.48.22.55.34.07.13.07.72-.17 1.4Z"/></svg>
+            Cotizar
+          </a>
+        </div>
+      </div>
+
+      <div class="group reveal border border-ink/10 hover:border-orange transition-colors duration-300" style="transition-delay: 50ms;">
+        <div class="h-44 md:h-52 overflow-hidden bg-haze">
+          <img src="https://picsum.photos/seed/volteo-r-2/600/450" alt="Remolque volteo 14 m3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="p-5">
+          <h3 class="font-display text-xl uppercase tracking-tight leading-tight">Volteo 14 m³</h3>
+          <p class="mt-1 text-steel text-xs leading-snug">Triple eje, mayor volumen para acarreo continuo.</p>
+          <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%2C%20me%20interesa%20el%20Remolque%20Volteo%2014%20m3&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mt-3 w-full btn-whatsapp-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.46 17.5 2 12.04 2Zm5.83 14.03c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.19-1.58-1.19-3.01s.75-2.14 1.02-2.43c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.81 2.01.88 2.16.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.17.29.75 1.24 1.6 2.01 1.1 1 2.03 1.31 2.32 1.46.29.15.46.13.63-.08.17-.21.71-.83.9-1.11.19-.29.38-.24.63-.14.26.1 1.64.77 1.92.91.29.15.48.22.55.34.07.13.07.72-.17 1.4Z"/></svg>
+            Cotizar
+          </a>
+        </div>
+      </div>
+
+      <div class="group reveal border border-ink/10 hover:border-orange transition-colors duration-300" style="transition-delay: 100ms;">
+        <div class="h-44 md:h-52 overflow-hidden bg-haze">
+          <img src="https://picsum.photos/seed/volteo-r-3/600/450" alt="Remolque volteo 18 m3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="p-5">
+          <h3 class="font-display text-xl uppercase tracking-tight leading-tight">Volteo 18 m³ Industrial</h3>
+          <p class="mt-1 text-steel text-xs leading-snug">Máxima capacidad, pistón hidráulico reforzado.</p>
+          <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%2C%20me%20interesa%20el%20Remolque%20Volteo%2018%20m3%20Industrial&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mt-3 w-full btn-whatsapp-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.46 17.5 2 12.04 2Zm5.83 14.03c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.19-1.58-1.19-3.01s.75-2.14 1.02-2.43c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.81 2.01.88 2.16.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.17.29.75 1.24 1.6 2.01 1.1 1 2.03 1.31 2.32 1.46.29.15.46.13.63-.08.17-.21.71-.83.9-1.11.19-.29.38-.24.63-.14.26.1 1.64.77 1.92.91.29.15.48.22.55.34.07.13.07.72-.17 1.4Z"/></svg>
+            Cotizar
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =============== CATEGORÍA 04: CAR HAULER =============== -->
+  <section id="car-hauler" class="py-16 md:py-24 bg-haze scroll-mt-20">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 mb-10 md:mb-14 flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div class="reveal">
+        <p class="section-label">Categoría 04 · 2 Modelos</p>
+        <h2 class="mt-2 text-4xl md:text-6xl font-display tracking-tightest uppercase text-ink">Remolque Car Hauler</h2>
+        <p class="mt-3 text-steel text-sm md:text-base max-w-xl">Transporte de autos, cuatrimotos y equipo ligero con rampas de acceso integradas.</p>
+      </div>
+    </div>
+
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+      <div class="group reveal bg-paper border border-ink/10 hover:border-orange transition-colors duration-300">
+        <div class="h-52 md:h-60 overflow-hidden bg-haze">
+          <img src="https://picsum.photos/seed/car-hauler-1/700/500" alt="Remolque car hauler sencillo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="p-5">
+          <h3 class="font-display text-xl uppercase tracking-tight leading-tight">Car Hauler Sencillo</h3>
+          <p class="mt-1 text-steel text-xs leading-snug">Un eje, ideal para transportar un vehículo o cuatrimoto.</p>
+          <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%2C%20me%20interesa%20el%20Remolque%20Car%20Hauler%20Sencillo&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mt-3 w-full btn-whatsapp-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.46 17.5 2 12.04 2Zm5.83 14.03c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.19-1.58-1.19-3.01s.75-2.14 1.02-2.43c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.81 2.01.88 2.16.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.17.29.75 1.24 1.6 2.01 1.1 1 2.03 1.31 2.32 1.46.29.15.46.13.63-.08.17-.21.71-.83.9-1.11.19-.29.38-.24.63-.14.26.1 1.64.77 1.92.91.29.15.48.22.55.34.07.13.07.72-.17 1.4Z"/></svg>
+            Cotizar
+          </a>
+        </div>
+      </div>
+
+      <div class="group reveal bg-paper border border-ink/10 hover:border-orange transition-colors duration-300" style="transition-delay: 50ms;">
+        <div class="h-52 md:h-60 overflow-hidden bg-haze">
+          <img src="https://picsum.photos/seed/car-hauler-2/700/500" alt="Remolque car hauler doble eje" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="p-5">
+          <h3 class="font-display text-xl uppercase tracking-tight leading-tight">Car Hauler Doble Eje</h3>
+          <p class="mt-1 text-steel text-xs leading-snug">Mayor capacidad de carga, ideal para camionetas y SUVs.</p>
+          <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%2C%20me%20interesa%20el%20Remolque%20Car%20Hauler%20Doble%20Eje&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mt-3 w-full btn-whatsapp-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.46 17.5 2 12.04 2Zm5.83 14.03c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.19-1.58-1.19-3.01s.75-2.14 1.02-2.43c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.81 2.01.88 2.16.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.17.29.75 1.24 1.6 2.01 1.1 1 2.03 1.31 2.32 1.46.29.15.46.13.63-.08.17-.21.71-.83.9-1.11.19-.29.38-.24.63-.14.26.1 1.64.77 1.92.91.29.15.48.22.55.34.07.13.07.72-.17 1.4Z"/></svg>
+            Cotizar
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =============== CATEGORÍA 05: PUESTO DE COMIDA (destacado) =============== -->
+  <section id="puesto-comida" class="py-16 md:py-24 scroll-mt-20">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10">
+      <div class="mb-10 md:mb-14 reveal">
+        <p class="section-label">Categoría 05 · Modelo Único</p>
+        <h2 class="mt-2 text-4xl md:text-6xl font-display tracking-tightest uppercase text-ink">Remolque para Puesto de Comida</h2>
+        <p class="mt-3 text-steel text-sm md:text-base max-w-xl">Food trailer equipado para arrancar tu negocio de comida móvil sin obra ni local fijo.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center bg-ink text-paper reveal">
+        <div class="h-64 md:h-[420px] overflow-hidden">
+          <img src="https://picsum.photos/seed/food-trailer/800/700" alt="Remolque food truck para puesto de comida" class="w-full h-full object-cover" />
+        </div>
+        <div class="p-8 md:p-0 md:pr-14">
+          <p class="font-mono text-xs uppercase tracking-widest2 text-yellow mb-4">Food Trailer Equipado</p>
+          <h3 class="text-3xl md:text-4xl font-display uppercase tracking-tight mb-4">Tu Negocio, Sobre Ruedas</h3>
+          <p class="text-steel-light text-sm md:text-base leading-relaxed mb-6 max-w-md">
+            Estructura cerrada, ventanas de despacho, espacio para plancha, freidora y refrigeración. Ideal para food trucks, cafeterías móviles y puntos de venta temporales.
+          </p>
+          <ul class="grid grid-cols-2 gap-3 font-mono text-xs uppercase tracking-widest2 text-paper/80 mb-8">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-yellow"></span>Ventanas de despacho</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-yellow"></span>Instalación eléctrica</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-yellow"></span>Piso lavable</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-yellow"></span>Estructura reforzada</li>
+          </ul>
+          <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%2C%20me%20interesa%20el%20Remolque%20para%20Puesto%20de%20Comida&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="btn-primary !bg-yellow !text-ink hover:!bg-paper inline-flex">Cotizar Food Trailer</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="relative h-[50vh] min-h-[380px] overflow-hidden">
+    <img src="https://picsum.photos/seed/morrent-remolques-cta/1920/900" alt="Fila de remolques nuevos listos para entrega" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-ink/80"></div>
+    <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+      <h2 class="text-paper text-3xl md:text-5xl tracking-tightest uppercase max-w-2xl reveal">¿No encuentras el modelo exacto?</h2>
+      <p class="mt-4 text-paper/80 max-w-lg reveal">Fabricamos remolques a la medida de tu operación. Cuéntanos qué necesitas cargar.</p>
+      <a href="contacto.html" class="mt-7 btn-primary !bg-yellow !text-ink hover:!bg-orange hover:!text-paper reveal">Solicitar cotización</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-ink text-paper">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div>
+        <span class="font-display text-3xl uppercase tracking-tightest">Morrent</span>
+        <p class="mt-4 text-sm text-steel-light max-w-xs">Renta de maquinaria pesada, instalaciones eléctricas y limpieza de playas. Equipo listo, gente que responde.</p>
+      </div>
+      <div>
+        <p class="section-label mb-4 text-steel-light">Servicios</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="maquinaria-pesada.html" class="text-steel-light hover:text-yellow transition-colors">Maquinaria Pesada</a></li>
+          <li><a href="suministro-agregados.html" class="text-steel-light hover:text-yellow transition-colors">Suministro de Agregados</a></li>
+          <li><a href="montacargas.html" class="text-steel-light hover:text-yellow transition-colors">Montacargas</a></li>
+          <li><a href="limpieza-playas.html" class="text-steel-light hover:text-yellow transition-colors">Limpieza de Playas</a></li>
+          <li><a href="remolques-venta.html" class="text-steel-light hover:text-yellow transition-colors">Remolques en Venta</a></li>
+          <li><a href="instalaciones-electricas.html" class="text-steel-light hover:text-yellow transition-colors">Instalaciones Eléctricas</a></li>
+          <li><a href="contacto.html" class="text-steel-light hover:text-yellow transition-colors">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="section-label mb-4 text-steel-light">Contacto</p>
+        <ul class="space-y-2 text-sm text-steel-light">
+          <li><a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%21%21&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="hover:text-yellow transition-colors">WhatsApp directo</a></li>
+          <li><a href="mailto:gerente@morrent.com.mx" class="hover:text-yellow transition-colors">Gerente@morrent.com.mx</a></li>
+          <li>Lun–Vie · 8:00–19:00</li>
+          <li>Sáb · 8:00–13:00</li>
+        </ul>
+      </div>
+      <div>
+        <p class="section-label mb-4 text-steel-light">Redes</p>
+        <ul class="space-y-2 text-sm text-steel-light">
+          <li><a href="#" class="hover:text-yellow transition-colors">Facebook</a></li>
+          <li><a href="#" class="hover:text-yellow transition-colors">Instagram</a></li>
+          <li><a href="#" class="hover:text-yellow transition-colors">Ubicación en Google Maps</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="mx-auto max-w-[1440px] px-6 md:px-10 py-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-steel-light font-mono">
+        <span>© 2026 MORRENT. TODOS LOS DERECHOS RESERVADOS.</span>
+        <span>MORRENT.COM.MX</span>
+      </div>
+    </div>
+  </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+  <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%21%21&type=phone_number&app_absent=0" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" class="btn-whatsapp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-7 h-7" fill="currentColor">
+      <path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.697 4.61 1.902 6.484L4 29l7.72-1.876A11.94 11.94 0 0 0 16.001 27C22.628 27 28 21.627 28 15S22.628 3 16.001 3zm0 21.818a9.77 9.77 0 0 1-4.98-1.363l-.357-.212-4.583 1.113 1.223-4.465-.232-.366A9.78 9.78 0 0 1 5.182 15c0-5.964 4.855-10.818 10.819-10.818S26.818 9.036 26.818 15 21.965 24.818 16.001 24.818zm5.55-8.146c-.303-.152-1.793-.885-2.07-.986-.278-.101-.48-.152-.682.152-.202.303-.784.986-.961 1.188-.177.202-.354.227-.657.076-.303-.152-1.279-.471-2.436-1.503-.9-.803-1.508-1.795-1.685-2.098-.177-.303-.019-.467.133-.618.137-.136.303-.354.455-.53.152-.177.202-.303.303-.505.101-.202.05-.379-.025-.53-.076-.152-.682-1.645-.935-2.253-.246-.591-.497-.511-.682-.52l-.581-.01c-.202 0-.53.076-.808.379-.278.303-1.06 1.036-1.06 2.528s1.085 2.933 1.236 3.136c.152.202 2.135 3.26 5.174 4.571.723.312 1.287.499 1.727.638.726.231 1.386.198 1.908.12.582-.087 1.793-.733 2.046-1.44.253-.708.253-1.314.177-1.44-.076-.126-.278-.202-.581-.354z"/>
+    </svg>
+  </a>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

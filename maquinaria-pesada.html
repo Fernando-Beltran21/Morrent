@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maquinaria Pesada — Grúas, Volteos y Excavadoras | Morrent</title>
+  <meta name="description" content="Renta de grúas, camiones de volteo y excavadoras para obra civil e industrial." />
+  
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind (utilidades) + configuración compartida con el resto del sitio -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+
+  <!-- Estilos personalizados (componentes, header, animaciones) -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bg-paper text-ink font-sans overflow-x-hidden relative">
+
+
+  <header id="site-header" data-hero="false" class="site-header header-transparent fixed inset-x-0 top-0 z-50">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 flex items-center justify-between h-20 md:h-24">
+      <a href="index.html" class="flex flex-col leading-none">
+        <span class="brand-name font-display text-3xl md:text-4xl tracking-tightest uppercase">Morrent</span>
+        <span class="brand-tag mt-0.5 font-mono text-[10px] tracking-widest2 uppercase hidden md:block">Playa del Carmen · Cancún · Tulum</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-9">
+        <a href="maquinaria-pesada.html" class="nav-link">Maquinaria Pesada</a>
+        <a href="suministro-agregados.html" class="nav-link">Suministro de Agregados</a>
+        <a href="montacargas.html" class="nav-link">Montacargas</a>
+        <a href="limpieza-playas.html" class="nav-link">Limpieza de Playas</a>
+        <a href="remolques-venta.html" class="nav-link">Remolques en Venta</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <a href="contacto.html" target="_blank" rel="noopener" class="contact-btn hidden md:inline-flex items-center gap-2 border px-5 py-3 font-mono text-xs uppercase tracking-wide transition-colors">Contacto</a>
+        <button id="menu-toggle" aria-expanded="false" aria-label="Abrir menú" class="lg:hidden w-11 h-11 flex flex-col items-center justify-center gap-1.5">
+          <span class="burger-line block w-6 h-0.5"></span>
+          <span class="burger-line block w-6 h-0.5"></span>
+          <span class="burger-line block w-4 h-0.5 self-end"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MENÚ MÓVIL -->
+  <div id="mobile-menu" class="fixed inset-0 z-40 bg-ink translate-x-full transition-transform duration-500 ease-in-out lg:hidden flex flex-col justify-center px-10 gap-6">
+    <a href="#catalogo" class="font-display text-3xl uppercase tracking-tightest text-paper hover:text-yellow transition-colors">Catálogo</a>
+    <a href="suministro-agregados.html" class="font-display text-3xl uppercase tracking-tightest text-paper hover:text-yellow transition-colors">Suministro de Agregados</a>
+    <a href="index.html#servicios" class="font-display text-3xl uppercase tracking-tightest text-paper hover:text-yellow transition-colors">Servicios</a>
+    <a href="contacto.html" class="font-display text-3xl uppercase tracking-tightest text-paper hover:text-yellow transition-colors">Contacto</a>
+    <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%21%21&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mt-6 btn-primary !bg-orange w-fit">Cotizar por WhatsApp</a>
+  </div>
+
+  <!-- HERO ORIGINAL MEJORADO -->
+  <section class="relative h-[70vh] min-h-[500px] overflow-hidden mt-20 md:mt-24">
+    <img src="https://picsum.photos/seed/morrent-mp-hero/1920/1000" alt="Excavadora pesada" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent"></div>
+    <div class="relative z-10 h-full mx-auto max-w-[1440px] px-6 md:px-10 flex flex-col justify-end pb-16 md:pb-24">
+      <p class="eyebrow text-yellow reveal">Maquinaria · Grúas · Volteos · Pipas</p>
+      <h1 class="mt-3 text-paper text-[12vw] leading-[0.85] md:text-[6.5vw] font-display tracking-tightest uppercase max-w-5xl reveal" style="transition-delay: 100ms;">
+        El Equipo Correcto,<br>Para el Trabajo Pesado
+      </h1>
+      <p class="mt-6 text-paper/80 max-w-xl text-sm md:text-base leading-relaxed reveal" style="transition-delay: 200ms;">
+        Unidades certificadas listas para obra civil, movimiento de tierra y proyectos industriales.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- INICIO DEL CATÁLOGO (5 SECCIONES)    -->
+  <!-- ========================================== -->
+  <div id="catalogo" class="pt-10"></div>
+
+  <!-- SECCIÓN 1: MAQUINARIA (Slider Horizontal Moderno) -->
+  <section class="py-16 md:py-24 overflow-hidden">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div class="reveal">
+        <p class="section-label">Categoría 01</p>
+        <h2 class="mt-2 text-4xl md:text-6xl font-display tracking-tightest uppercase text-ink">Maquinaria Pesada</h2>
+        <p class="mt-3 text-steel text-sm md:text-base max-w-xl">14 unidades disponibles. Excavadoras y retroexcavadoras para movimiento de tierras preciso.</p>
+      </div>
+      <div class="flex gap-2 reveal hidden md:flex">
+        <!-- Indicadores visuales de scroll -->
+        <div class="w-10 h-10 border border-ink/20 flex items-center justify-center hover:bg-haze transition-colors cursor-pointer"><span class="font-mono">←</span></div>
+        <div class="w-10 h-10 border border-ink/20 flex items-center justify-center hover:bg-ink hover:text-paper transition-colors cursor-pointer"><span class="font-mono">→</span></div>
+      </div>
+    </div>
+
+    <!-- Contenedor Scroll -->
+    <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 px-6 md:px-10 pb-8 mx-auto max-w-[1440px]">
+      
+      <!-- Card Modelo 1 -->
+      <div class="snap-start shrink-0 w-[85vw] md:w-[400px] group border border-ink/10 hover:border-orange transition-colors duration-300 reveal">
+        <div class="overflow-hidden h-64 md:h-72 bg-haze relative">
+          <img src="https://picsum.photos/seed/exc1/600/500" alt="Excavadora CAT 320" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute top-4 left-4 bg-paper px-2 py-1 font-mono text-[10px] uppercase tracking-widest2 text-ink">Destacado</div>
+        </div>
+        <div class="p-6 bg-paper">
+          <h3 class="text-2xl font-display uppercase tracking-tight">Excavadora CAT 320</h3>
+          <ul class="mt-3 space-y-1 font-mono text-xs text-steel tracking-wide border-t border-ink/5 pt-4">
+            <li class="flex justify-between"><span>Peso operativo</span> <span>20 Ton</span></li>
+            <li class="flex justify-between"><span>Cucharón</span> <span>1.2 m³</span></li>
+          </ul>
+          <a href="#" class="mt-6 inline-block font-mono text-xs uppercase tracking-widest2 text-orange hover:text-ink transition-colors">Cotizar equipo →</a>
+        </div>
+      </div>
+
+      <!-- Card Modelo 2 -->
+      <div class="snap-start shrink-0 w-[85vw] md:w-[400px] group border border-ink/10 hover:border-orange transition-colors duration-300 reveal" style="transition-delay: 100ms;">
+        <div class="overflow-hidden h-64 md:h-72 bg-haze relative">
+          <img src="https://picsum.photos/seed/exc2/600/500" alt="Retroexcavadora JD" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+        </div>
+        <div class="p-6 bg-paper">
+          <h3 class="text-2xl font-display uppercase tracking-tight">Retroexcavadora JD 310L</h3>
+          <ul class="mt-3 space-y-1 font-mono text-xs text-steel tracking-wide border-t border-ink/5 pt-4">
+            <li class="flex justify-between"><span>Potencia</span> <span>82 HP</span></li>
+            <li class="flex justify-between"><span>Tracción</span> <span>4x4</span></li>
+          </ul>
+          <a href="#" class="mt-6 inline-block font-mono text-xs uppercase tracking-widest2 text-orange hover:text-ink transition-colors">Cotizar equipo →</a>
+        </div>
+      </div>
+
+      <!-- Card Modelo 3 -->
+      <div class="snap-start shrink-0 w-[85vw] md:w-[400px] group border border-ink/10 hover:border-orange transition-colors duration-300 reveal" style="transition-delay: 200ms;">
+        <div class="overflow-hidden h-64 md:h-72 bg-haze relative">
+          <img src="https://picsum.photos/seed/exc3/600/500" alt="Moto CAT" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+        </div>
+        <div class="p-6 bg-paper">
+          <h3 class="text-2xl font-display uppercase tracking-tight">Motoconformadora CAT 120</h3>
+          <ul class="mt-3 space-y-1 font-mono text-xs text-steel tracking-wide border-t border-ink/5 pt-4">
+            <li class="flex justify-between"><span>Potencia</span> <span>145 HP</span></li>
+            <li class="flex justify-between"><span>Cuchilla</span> <span>12 pies</span></li>
+          </ul>
+          <a href="#" class="mt-6 inline-block font-mono text-xs uppercase tracking-widest2 text-orange hover:text-ink transition-colors">Cotizar equipo →</a>
+        </div>
+      </div>
+
+      <!-- Card "Ver Todo" -->
+      <div class="snap-start shrink-0 w-[85vw] md:w-[400px] group border border-ink/10 hover:border-orange transition-colors duration-300 reveal" style="transition-delay: 300ms;">
+        <div class="overflow-hidden h-full min-h-[420px] bg-haze relative flex items-center justify-center">
+          <div class="text-center p-6">
+            <span class="text-6xl font-display text-steel-light">+11</span>
+            <p class="font-mono text-xs uppercase tracking-widest2 text-steel mt-2">Modelos Adicionales</p>
+            <button class="mt-6 btn-outline !bg-paper">Ver Inventario Completo</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2: GRÚAS (Side-by-side Alternado / Dark Mode) -->
+  <section class="bg-ink text-paper py-16 md:py-24">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10">
+      <div class="mb-12 md:mb-20 text-center reveal">
+        <p class="section-label text-steel-light">Categoría 02</p>
+        <h2 class="mt-2 text-4xl md:text-6xl font-display tracking-tightest uppercase">Grúas Industriales</h2>
+        <p class="mt-3 text-steel-light text-sm md:text-base max-w-2xl mx-auto">Izajes precisos con operadores certificados para estructuras pesadas.</p>
+      </div>
+
+      <div class="space-y-12 md:space-y-0">
+        <!-- Grúa 1 (Imagen Izquierda, Texto Derecha) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 group reveal">
+          <div class="h-[40vh] md:h-[600px] overflow-hidden">
+            <img src="https://picsum.photos/seed/grua1/1000/1000" alt="Grúa Titán 25T" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-80 group-hover:opacity-100">
+          </div>
+          <div class="bg-[#1A1814] p-8 md:p-16 flex flex-col justify-center">
+            <span class="font-mono text-xs uppercase tracking-widest2 text-yellow mb-4">Brazo Telescópico</span>
+            <h3 class="text-3xl md:text-5xl font-display uppercase tracking-tight text-paper mb-6">Grúa Titán 25T</h3>
+            <p class="text-steel-light text-sm md:text-base leading-relaxed mb-8 max-w-md">Ideal para montajes estructurales de mediana envergadura. Combina excelente movilidad con una capacidad de carga sólida y pluma telescópica de largo alcance.</p>
+            <div class="grid grid-cols-2 gap-4 border-t border-white/10 pt-8 mb-8 font-mono text-xs text-paper/80 uppercase tracking-widest2">
+              <div><span class="block text-steel-light mb-1">Capacidad</span> 25 Toneladas</div>
+              <div><span class="block text-steel-light mb-1">Pluma</span> 30 Metros</div>
+            </div>
+            <button class="btn-primary !bg-yellow !text-ink hover:!bg-paper self-start">Agendar Equipo</button>
+          </div>
+        </div>
+
+        <!-- Grúa 2 (Texto Izquierda, Imagen Derecha) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 group reveal">
+          <div class="bg-[#1A1814] p-8 md:p-16 flex flex-col justify-center order-2 md:order-1 border-t md:border-t-0 md:border-r border-white/5">
+            <span class="font-mono text-xs uppercase tracking-widest2 text-yellow mb-4">Espacios Confinados</span>
+            <h3 class="text-3xl md:text-5xl font-display uppercase tracking-tight text-paper mb-6">Grúa Hidráulica 12T</h3>
+            <p class="text-steel-light text-sm md:text-base leading-relaxed mb-8 max-w-md">Solución compacta y sumamente versátil para espacios confinados o maniobras rápidas urbanas. Despliegue rápido de estabilizadores.</p>
+            <div class="grid grid-cols-2 gap-4 border-t border-white/10 pt-8 mb-8 font-mono text-xs text-paper/80 uppercase tracking-widest2">
+              <div><span class="block text-steel-light mb-1">Capacidad</span> 12 Toneladas</div>
+              <div><span class="block text-steel-light mb-1">Pluma</span> 18 Metros</div>
+            </div>
+            <button class="btn-primary !bg-yellow !text-ink hover:!bg-paper self-start">Agendar Equipo</button>
+          </div>
+          <div class="h-[40vh] md:h-[600px] overflow-hidden order-1 md:order-2">
+            <img src="https://picsum.photos/seed/grua2/1000/1000" alt="Grúa Hidráulica 12T" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-80 group-hover:opacity-100">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3: VOLTEOS (Tarjetas con Hover Reveal) -->
+  <section class="py-16 md:py-24 bg-haze">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10">
+      <div class="mb-10 reveal text-center md:text-left">
+        <p class="section-label">Categoría 03</p>
+        <h2 class="mt-2 text-4xl md:text-6xl font-display tracking-tightest uppercase text-ink">Camiones de Volteo</h2>
+        <p class="mt-3 text-steel text-sm md:text-base max-w-xl mx-auto md:mx-0">Acarreo eficiente de material y escombros. Unidades robustas para las exigencias más duras de la obra.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+        
+        <!-- Volteo Card 1 -->
+        <div class="relative overflow-hidden group rounded-sm reveal cursor-pointer h-[450px] md:h-[550px]">
+          <img src="https://picsum.photos/seed/volteo1/800/800" alt="Volteo Doble Eje" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+          
+          <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent"></div>
+          
+          <div class="absolute inset-0 bg-ink/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 md:p-12">
+            <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+              <h3 class="text-3xl md:text-4xl font-display uppercase tracking-tight text-paper mb-2">Volteo Doble Eje</h3>
+              <p class="font-mono text-xs text-yellow tracking-widest2 uppercase mb-6">Carga Estándar</p>
+              
+              <ul class="space-y-3 font-mono text-sm text-paper/90 border-t border-paper/20 pt-6 mb-8">
+                <li class="flex justify-between"><span>Capacidad</span> <span class="text-white font-bold">14 m³</span></li>
+                <li class="flex justify-between"><span>Suspensión</span> <span class="text-white font-bold">Neumática</span></li>
+                <li class="flex justify-between"><span>Ideal para</span> <span class="text-white font-bold">Agregados y escombro</span></li>
+              </ul>
+              <button class="w-full btn-outline !border-paper !text-paper hover:!bg-paper hover:!text-ink">Cotizar Acarreo</button>
+            </div>
+          </div>
+          
+          <h3 class="absolute bottom-8 left-8 text-3xl md:text-4xl font-display uppercase tracking-tight text-paper transition-opacity duration-300 group-hover:opacity-0">Doble Eje <span class="text-yellow ml-2 text-xl md:text-2xl">14 m³</span></h3>
+        </div>
+
+        <!-- Volteo Card 2 -->
+        <div class="relative overflow-hidden group rounded-sm reveal cursor-pointer h-[450px] md:h-[550px]" style="transition-delay: 100ms;">
+          <img src="https://picsum.photos/seed/volteo2/800/800" alt="Góndola 30m3" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+          
+          <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent"></div>
+          
+          <div class="absolute inset-0 bg-ink/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 md:p-12">
+            <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+              <h3 class="text-3xl md:text-4xl font-display uppercase tracking-tight text-paper mb-2">Tractocamión Góndola</h3>
+              <p class="font-mono text-xs text-yellow tracking-widest2 uppercase mb-6">Alto Volumen</p>
+              
+              <ul class="space-y-3 font-mono text-sm text-paper/90 border-t border-paper/20 pt-6 mb-8">
+                <li class="flex justify-between"><span>Capacidad</span> <span class="text-white font-bold">30 m³</span></li>
+                <li class="flex justify-between"><span>Tracción</span> <span class="text-white font-bold">Kenworth T800</span></li>
+                <li class="flex justify-between"><span>Ideal para</span> <span class="text-white font-bold">Movimiento masivo</span></li>
+              </ul>
+              <button class="w-full btn-outline !border-paper !text-paper hover:!bg-paper hover:!text-ink">Cotizar Acarreo</button>
+            </div>
+          </div>
+          
+          <h3 class="absolute bottom-8 left-8 text-3xl md:text-4xl font-display uppercase tracking-tight text-paper transition-opacity duration-300 group-hover:opacity-0">Góndola <span class="text-yellow ml-2 text-xl md:text-2xl">30 m³</span></h3>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4: PIPAS (Full-Width Hero Banner) -->
+  <section class="py-6 px-6 md:px-10 max-w-[1440px] mx-auto reveal">
+    <div class="relative w-full h-[55vh] md:h-[65vh] min-h-[450px] overflow-hidden rounded-lg group">
+      <img src="https://picsum.photos/seed/pipaAgua/1920/1080" alt="Pipa de Agua" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[2s]">
+      
+      <div class="absolute inset-0 bg-ink/50 mix-blend-multiply"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/60 to-transparent"></div>
+
+      <div class="relative z-10 h-full flex flex-col justify-center p-8 md:p-16 max-w-2xl">
+        <p class="font-mono text-xs text-yellow tracking-widest2 uppercase mb-4">Categoría 04</p>
+        <h2 class="text-5xl md:text-7xl font-display uppercase tracking-tight text-paper leading-[0.9] mb-6">Abastecimiento<br>Constante</h2>
+        <p class="text-paper/80 text-sm md:text-base leading-relaxed mb-8 max-w-md">
+          Pipa de 20,000 Litros. Ideal para riego de terracerías, abastecimiento de cisternas en obra civil y control de polvo en caminos.
+        </p>
+        
+        <div class="flex flex-wrap gap-3 mb-8">
+          <span class="inline-flex items-center gap-2 bg-paper/10 backdrop-blur border border-paper/20 px-3 py-1.5 font-mono text-[10px] text-paper uppercase tracking-widest2"><span class="w-1.5 h-1.5 rounded-full bg-yellow"></span> 20,000 Litros</span>
+          <span class="inline-flex items-center gap-2 bg-paper/10 backdrop-blur border border-paper/20 px-3 py-1.5 font-mono text-[10px] text-paper uppercase tracking-widest2"><span class="w-1.5 h-1.5 rounded-full bg-yellow"></span> Motobomba Incluida</span>
+        </div>
+        
+        <a href="#" class="btn-primary !bg-orange w-fit hover:!bg-yellow hover:!text-ink">Solicitar Pipa</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA ORIGINAL -->
+  <section class="relative h-[50vh] min-h-[380px] overflow-hidden">
+    <img src="https://picsum.photos/seed/morrent-mp-cta/1920/900" alt="Equipo Morrent" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-ink/80"></div>
+    <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+      <h2 class="text-paper text-3xl md:text-5xl tracking-tightest uppercase max-w-2xl reveal">¿Necesitas maquinaria para tu obra?</h2>
+      <p class="mt-4 text-paper/80 max-w-lg reveal">Dinos qué proyecto tienes y te cotizamos hoy mismo.</p>
+      <a href="contacto.html" class="mt-7 btn-primary !bg-yellow !text-ink hover:!bg-orange hover:!text-paper reveal">Solicitar cotización</a>
+    </div>
+  </section>
+
+  <!-- FOOTER ORIGINAL -->
+  <footer class="bg-ink text-paper">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div>
+        <span class="font-display text-3xl uppercase tracking-tightest">Morrent</span>
+        <p class="mt-4 text-sm text-steel-light max-w-xs">Renta de maquinaria pesada, instalaciones eléctricas y limpieza de playas. Equipo listo, gente que responde.</p>
+      </div>
+      <div>
+        <p class="section-label mb-4 text-steel-light">Servicios</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="maquinaria-pesada.html" class="text-steel-light hover:text-yellow transition-colors">Maquinaria Pesada</a></li>
+          <li><a href="suministro-agregados.html" class="text-steel-light hover:text-yellow transition-colors">Suministro de Agregados</a></li>
+          <li><a href="montacargas.html" class="text-steel-light hover:text-yellow transition-colors">Montacargas</a></li>
+          <li><a href="limpieza-playas.html" class="text-steel-light hover:text-yellow transition-colors">Limpieza de Playas</a></li>
+          <li><a href="remolques-venta.html" class="text-steel-light hover:text-yellow transition-colors">Remolques en Venta</a></li>
+          <li><a href="instalaciones-electricas.html" class="text-steel-light hover:text-yellow transition-colors">Instalaciones Eléctricas</a></li>
+          <li><a href="contacto.html" class="text-steel-light hover:text-yellow transition-colors">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="section-label mb-4 text-steel-light">Contacto</p>
+        <ul class="space-y-2 text-sm text-steel-light">
+          <li><a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%21%21&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="hover:text-yellow transition-colors">WhatsApp directo</a></li>
+          <li><a href="mailto:gerente@morrent.com.mx" class="hover:text-yellow transition-colors">Gerente@morrent.com.mx</a></li>
+          <li>Lun–Vie · 8:00–19:00</li>
+          <li>Sáb · 8:00–13:00</li>
+        </ul>
+      </div>
+      <div>
+        <p class="section-label mb-4 text-steel-light">Redes</p>
+        <ul class="space-y-2 text-sm text-steel-light">
+          <li><a href="#" class="hover:text-yellow transition-colors">Facebook</a></li>
+          <li><a href="#" class="hover:text-yellow transition-colors">Instagram</a></li>
+          <li><a href="#" class="hover:text-yellow transition-colors">Ubicación en Google Maps</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="mx-auto max-w-[1440px] px-6 md:px-10 py-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-steel-light font-mono">
+        <span>© 2026 MORRENT. TODOS LOS DERECHOS RESERVADOS.</span>
+        <span>MORRENT.COM.MX</span>
+      </div>
+    </div>
+  </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+  <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%21%21&type=phone_number&app_absent=0" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" class="btn-whatsapp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-7 h-7" fill="currentColor">
+      <path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.697 4.61 1.902 6.484L4 29l7.72-1.876A11.94 11.94 0 0 0 16.001 27C22.628 27 28 21.627 28 15S22.628 3 16.001 3zm0 21.818a9.77 9.77 0 0 1-4.98-1.363l-.357-.212-4.583 1.113 1.223-4.465-.232-.366A9.78 9.78 0 0 1 5.182 15c0-5.964 4.855-10.818 10.819-10.818S26.818 9.036 26.818 15 21.965 24.818 16.001 24.818zm5.55-8.146c-.303-.152-1.793-.885-2.07-.986-.278-.101-.48-.152-.682.152-.202.303-.784.986-.961 1.188-.177.202-.354.227-.657.076-.303-.152-1.279-.471-2.436-1.503-.9-.803-1.508-1.795-1.685-2.098-.177-.303-.019-.467.133-.618.137-.136.303-.354.455-.53.152-.177.202-.303.303-.505.101-.202.05-.379-.025-.53-.076-.152-.682-1.645-.935-2.253-.246-.591-.497-.511-.682-.52l-.581-.01c-.202 0-.53.076-.808.379-.278.303-1.06 1.036-1.06 2.528s1.085 2.933 1.236 3.136c.152.202 2.135 3.26 5.174 4.571.723.312 1.287.499 1.727.638.726.231 1.386.198 1.908.12.582-.087 1.793-.733 2.046-1.44.253-.708.253-1.314.177-1.44-.076-.126-.278-.202-.581-.354z"/>
+    </svg>
+  </a>
+
+  <!-- Enlace al nuevo archivo JS -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>

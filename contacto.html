@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | Morrent</title>
+  <meta name="description" content="Contacta a Morrent por WhatsApp, correo o visítanos. Renta de maquinaria pesada, eléctrico y limpieza de playas." />
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind (utilidades) + configuración compartida con el resto del sitio -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+
+  <!-- Estilos personalizados (componentes, header, animaciones) -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bg-paper text-ink font-sans overflow-x-hidden relative">
+
+
+  <header id="site-header" data-hero="false" class="site-header header-transparent fixed inset-x-0 top-0 z-50">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 flex items-center justify-between h-20 md:h-24">
+      <a href="index.html" class="flex flex-col leading-none">
+        <span class="brand-name font-display text-3xl md:text-4xl tracking-tightest uppercase">Morrent</span>
+        <span class="brand-tag mt-0.5 font-mono text-[10px] tracking-widest2 uppercase hidden md:block">Playa del Carmen · Cancún · Tulum</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-9">
+        <a href="maquinaria-pesada.html" class="nav-link">Maquinaria Pesada</a>
+        <a href="suministro-agregados.html" class="nav-link">Suministro de Agregados</a>
+        <a href="montacargas.html" class="nav-link">Montacargas</a>
+        <a href="limpieza-playas.html" class="nav-link">Limpieza de Playas</a>
+        <a href="remolques-venta.html" class="nav-link">Remolques en Venta</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <a href="contacto.html" class="contact-btn hidden md:inline-flex items-center gap-2 border px-5 py-3 font-mono text-xs uppercase tracking-wide transition-colors">Contacto</a>
+        <button id="menu-toggle" aria-expanded="false" aria-label="Abrir menú" class="lg:hidden w-11 h-11 flex flex-col items-center justify-center gap-1.5">
+          <span class="burger-line block w-6 h-0.5"></span>
+          <span class="burger-line block w-6 h-0.5"></span>
+          <span class="burger-line block w-4 h-0.5 self-end"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MENÚ MÓVIL -->
+  <div id="mobile-menu" class="fixed inset-0 z-40 bg-ink translate-x-full transition-transform duration-500 ease-in-out lg:hidden flex flex-col justify-center px-10 gap-6">
+    <a href="maquinaria-pesada.html" class="font-display text-3xl uppercase tracking-tightest text-paper hover:text-yellow transition-colors">Maquinaria Pesada</a>
+    <a href="suministro-agregados.html" class="font-display text-3xl uppercase tracking-tightest text-paper hover:text-yellow transition-colors">Suministro de Agregados</a>
+    <a href="montacargas.html" class="font-display text-3xl uppercase tracking-tightest text-paper hover:text-yellow transition-colors">Montacargas</a>
+    <a href="limpieza-playas.html" class="font-display text-3xl uppercase tracking-tightest text-paper hover:text-yellow transition-colors">Limpieza de Playas</a>
+    <a href="remolques-venta.html" class="font-display text-3xl uppercase tracking-tightest text-paper hover:text-yellow transition-colors">Remolques en Venta</a>
+    <a href="contacto.html" class="font-display text-3xl uppercase tracking-tightest text-paper hover:text-yellow transition-colors">Contacto</a>
+    <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%21%21&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mt-6 btn-primary !bg-orange w-fit">Cotizar por WhatsApp</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="relative h-[62vh] min-h-[420px] overflow-hidden mt-20 md:mt-24">
+    <img src="https://picsum.photos/seed/morrent-contacto-hero/1920/1000" alt="Equipo Morrent" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent"></div>
+    <div class="relative z-10 h-full mx-auto max-w-[1440px] px-6 md:px-10 flex flex-col justify-end pb-16">
+      <p class="eyebrow text-yellow reveal">Hablemos</p>
+      <h1 class="mt-3 text-paper text-[11vw] leading-[0.9] md:text-[5.5vw] font-display tracking-tightest uppercase reveal" style="transition-delay: 100ms;">Contacto</h1>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: INFO DE CONTACTO + MAPA -->
+  <section class="mx-auto max-w-[1440px] px-6 md:px-10 py-16 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+    <div class="reveal">
+      <p class="section-label">01 — Directo</p>
+      <h2 class="mt-3 text-3xl md:text-4xl font-display tracking-tightest uppercase text-ink">Escríbenos por WhatsApp</h2>
+      <p class="mt-5 text-steel text-sm md:text-base leading-relaxed max-w-md">Es la vía más rápida para cotizar. Cuéntanos qué equipo necesitas, por cuánto tiempo y en qué ubicación, y te respondemos el mismo día.</p>
+      <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%21%21&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mt-8 btn-primary !bg-[#1FAE5C] w-fit">Abrir WhatsApp</a>
+
+      <div class="mt-14 space-y-8 border-t border-ink/10 pt-10">
+        <div>
+          <p class="section-label">Correo</p>
+          <a href="mailto:gerente@morrent.com.mx" class="mt-1 block text-xl md:text-2xl font-display uppercase tracking-tight hover:text-orange transition-colors">gerente@morrent.com.mx</a>
+        </div>
+        <div>
+          <p class="section-label">Horario</p>
+          <p class="mt-1 text-xl md:text-2xl font-display uppercase tracking-tight">Lun–Vie · 8:00–19:00</p>
+          <p class="text-xl md:text-2xl font-display uppercase tracking-tight">Sáb · 8:00–13:00</p>
+        </div>
+        <div>
+          <p class="section-label">Redes</p>
+          <div class="flex gap-6 mt-2 font-mono text-sm uppercase tracking-widest2">
+            <a href="#" class="hover:text-orange transition-colors">Facebook</a>
+            <a href="#" class="hover:text-orange transition-colors">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="transition-delay: 100ms;">
+      <p class="section-label">02 — Ubicación</p>
+      <div class="mt-3 w-full h-[420px] bg-haze border border-ink/10 flex items-center justify-center">
+        <p class="font-mono text-xs text-steel uppercase tracking-widest2 text-center px-6">
+          Mapa de ubicación<br />(se integrará embed de Google Maps con la dirección definitiva)
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-ink text-paper">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div>
+        <span class="font-display text-3xl uppercase tracking-tightest">Morrent</span>
+        <p class="mt-4 text-sm text-steel-light max-w-xs">Renta de maquinaria pesada, instalaciones eléctricas y limpieza de playas. Equipo listo, gente que responde.</p>
+      </div>
+      <div>
+        <p class="section-label mb-4 text-steel-light">Servicios</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="maquinaria-pesada.html" class="text-steel-light hover:text-yellow transition-colors">Maquinaria Pesada</a></li>
+          <li><a href="suministro-agregados.html" class="text-steel-light hover:text-yellow transition-colors">Suministro de Agregados</a></li>
+          <li><a href="montacargas.html" class="text-steel-light hover:text-yellow transition-colors">Montacargas</a></li>
+          <li><a href="limpieza-playas.html" class="text-steel-light hover:text-yellow transition-colors">Limpieza de Playas</a></li>
+          <li><a href="remolques-venta.html" class="text-steel-light hover:text-yellow transition-colors">Remolques en Venta</a></li>
+          <li><a href="instalaciones-electricas.html" class="text-steel-light hover:text-yellow transition-colors">Instalaciones Eléctricas</a></li>
+          <li><a href="contacto.html" class="text-steel-light hover:text-yellow transition-colors">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="section-label mb-4 text-steel-light">Contacto</p>
+        <ul class="space-y-2 text-sm text-steel-light">
+          <li><a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%21%21&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="hover:text-yellow transition-colors">WhatsApp directo</a></li>
+          <li><a href="mailto:gerente@morrent.com.mx" class="hover:text-yellow transition-colors">Gerente@morrent.com.mx</a></li>
+          <li>Lun–Vie · 8:00–19:00</li>
+          <li>Sáb · 8:00–13:00</li>
+        </ul>
+      </div>
+      <div>
+        <p class="section-label mb-4 text-steel-light">Redes</p>
+        <ul class="space-y-2 text-sm text-steel-light">
+          <li><a href="#" class="hover:text-yellow transition-colors">Facebook</a></li>
+          <li><a href="#" class="hover:text-yellow transition-colors">Instagram</a></li>
+          <li><a href="#" class="hover:text-yellow transition-colors">Ubicación en Google Maps</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="mx-auto max-w-[1440px] px-6 md:px-10 py-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-steel-light font-mono">
+        <span>© 2026 MORRENT. TODOS LOS DERECHOS RESERVADOS.</span>
+        <span>MORRENT.COM.MX</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%21%21&type=phone_number&app_absent=0" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" class="btn-whatsapp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-7 h-7" fill="currentColor">
+      <path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.697 4.61 1.902 6.484L4 29l7.72-1.876A11.94 11.94 0 0 0 16.001 27C22.628 27 28 21.627 28 15S22.628 3 16.001 3zm0 21.818a9.77 9.77 0 0 1-4.98-1.363l-.357-.212-4.583 1.113 1.223-4.465-.232-.366A9.78 9.78 0 0 1 5.182 15c0-5.964 4.855-10.818 10.819-10.818S26.818 9.036 26.818 15 21.965 24.818 16.001 24.818zm5.55-8.146c-.303-.152-1.793-.885-2.07-.986-.278-.101-.48-.152-.682.152-.202.303-.784.986-.961 1.188-.177.202-.354.227-.657.076-.303-.152-1.279-.471-2.436-1.503-.9-.803-1.508-1.795-1.685-2.098-.177-.303-.019-.467.133-.618.137-.136.303-.354.455-.53.152-.177.202-.303.303-.505.101-.202.05-.379-.025-.53-.076-.152-.682-1.645-.935-2.253-.246-.591-.497-.511-.682-.52l-.581-.01c-.202 0-.53.076-.808.379-.278.303-1.06 1.036-1.06 2.528s1.085 2.933 1.236 3.136c.152.202 2.135 3.26 5.174 4.571.723.312 1.287.499 1.727.638.726.231 1.386.198 1.908.12.582-.087 1.793-.733 2.046-1.44.253-.708.253-1.314.177-1.44-.076-.126-.278-.202-.581-.354z"/>
+    </svg>
+  </a>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

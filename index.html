@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Morrent — Renta de Maquinaria Pesada, Suministro de Agregados, Desalojo de Materiales y Limpieza de Playas</title>
+  <meta name="description" content="Renta de grúas, excavadoras, montacargas, instalaciones eléctricas y limpieza de playas. Equipo verificado, entrega puntual." />
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind (utilidades) + configuración compartida -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+
+  <!-- Estilos personalizados (componentes, header, animaciones) -->
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body class="overflow-x-hidden">
+
+  <header id="site-header" data-hero="true" class="site-header header-transparent fixed inset-x-0 top-0 z-50">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 flex items-center justify-between h-20 md:h-24">
+      <a href="index.html" class="flex flex-col leading-none">
+        <span class="brand-name font-display text-3xl md:text-4xl tracking-tightest uppercase">Morrent</span>
+        <span class="brand-tag mt-0.5 font-mono text-[10px] tracking-widest2 uppercase hidden md:block">Playa del Carmen · Cancún · Tulum</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-9">
+        <a href="maquinaria-pesada.html" class="nav-link">Maquinaria Pesada</a>
+        <a href="montacargas.html" class="nav-link">Montacargas</a>
+        <a href="limpieza-playas.html" class="nav-link">Limpieza de Playas</a>
+        <a href="remolques-venta.html" class="nav-link">Remolques en Venta</a>
+        <a href="suministro-agregados.html" class="nav-link">Suministro de Agregados</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <a href="contacto.html" target="_blank" rel="noopener" class="contact-btn hidden md:inline-flex items-center gap-2 border px-5 py-3 font-mono text-xs uppercase tracking-wide transition-colors">Contacto</a>
+        <button id="menu-toggle" aria-expanded="false" aria-label="Abrir menú" class="lg:hidden w-11 h-11 flex flex-col items-center justify-center gap-1.5">
+          <span class="burger-line block w-6 h-0.5"></span>
+          <span class="burger-line block w-6 h-0.5"></span>
+          <span class="burger-line block w-4 h-0.5 self-end"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="mobile-menu" class="fixed inset-0 z-40 bg-ink translate-x-full transition-transform duration-500 ease-in-out lg:hidden flex flex-col justify-center px-10 gap-6">
+    <a href="maquinaria-pesada.html" class="font-display text-3xl uppercase tracking-tightest text-paper hover:text-yellow transition-colors">Maquinaria Pesada</a>
+        <a href="montacargas.html" class="font-display text-3xl uppercase tracking-tightest text-paper hover:text-yellow transition-colors">Montacargas</a>
+        <a href="limpieza-playas.html" class="font-display text-3xl uppercase tracking-tightest text-paper hover:text-yellow transition-colors">Limpieza de Playas</a>
+        <a href="remolques-venta.html" class="font-display text-3xl uppercase tracking-tightest text-paper hover:text-yellow transition-colors">Remolques en Venta</a>
+        <a href="suministro-agregados.html" class="font-display text-3xl uppercase tracking-tightest text-paper hover:text-yellow transition-colors">Suministro de Agregados</a>
+        <a href="contacto.html" class="font-display text-3xl uppercase tracking-tightest text-paper hover:text-yellow transition-colors">Contacto</a>
+    <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%21%21&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mt-6 btn-primary !bg-orange w-fit">Cotizar por WhatsApp</a>
+  </div>
+
+
+  <!-- HERO -->
+  <section class="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
+    <img src="https://picsum.photos/seed/morrent-hero-excavadora/1920/1200" alt="Excavadora Morrent en operación en un sitio de construcción" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-ink/50"></div>
+    <div class="relative z-10 h-full mx-auto max-w-[1440px] px-6 md:px-10 flex flex-col justify-end pb-20 md:pb-28">
+      <p class="eyebrow text-yellow reveal">Renta de maquinaria pesada en Playa del Carmen y alrededores</p>
+      <h1 class="mt-4 text-paper text-[13vw] leading-[0.88] md:text-[7.2vw] tracking-tightest uppercase reveal">
+        Maquinaria<br class="hidden md:block" /> lista para <span class="text-yellow">trabajar.</span>
+      </h1>
+      <p class="mt-6 max-w-xl text-paper/80 text-base md:text-lg reveal">
+      Nuestra trayectoria en el mercado respalda el compromiso 
+      de ofrecer soluciones diarias 
+      y eficientes en maquinaria pesada, 
+      grúas, montacargas, así como en servicios 
+      especializados de limpieza de playas.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-4 reveal">
+        <a href="#servicios" class="btn-primary">Ver servicios destacados</a>
+        <a href="contacto.html" class="btn-outline !border-paper !text-paper hover:!text-ink">Solicitar cotización</a>
+      </div>
+    </div>
+    <div class="absolute bottom-6 right-6 md:right-10 z-10 font-mono text-[10px] tracking-widest2 uppercase text-paper/60 hidden md:block">
+      Scroll ↓
+    </div>
+  </section>
+
+  <!-- CIFRAS -->
+  <section class="bg-ink text-paper">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 py-10 md:py-14 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
+      <div class="reveal">
+        <p class="font-display text-5xl md:text-6xl text-yellow leading-none">+9</p>
+        <p class="mt-2 font-mono text-xs tracking-widest2 uppercase text-steel-light">Años en operación</p>
+      </div>
+      <div class="reveal">
+        <p class="font-display text-5xl md:text-6xl text-yellow leading-none">40+</p>
+        <p class="mt-2 font-mono text-xs tracking-widest2 uppercase text-steel-light">Equipos disponibles</p>
+      </div>
+      <div class="reveal">
+        <p class="font-display text-5xl md:text-6xl text-yellow leading-none">3</p>
+        <p class="mt-2 font-mono text-xs tracking-widest2 uppercase text-steel-light">Líneas de servicio</p>
+      </div>
+      <div class="reveal">
+        <p class="font-display text-5xl md:text-6xl text-yellow leading-none">24/7</p>
+        <p class="mt-2 font-mono text-xs tracking-widest2 uppercase text-steel-light">Atención por WhatsApp</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compromiso -->
+  <section class="bg-haze">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 py-20 md:py-32 text-center">
+      <p class="section-label">01 — Compromiso</p>
+      <h2 class="mt-3 text-4xl md:text-6xl tracking-tightest uppercase max-w-3xl mx-auto">Sabemos que lo más importante es la satisfacción de nuestros clientes.</h2>
+      <p class="mt-6 max-w-xl text-steel text-base md:text-lg mx-auto">Es por este motivo que nuestro compromiso es ofrecer un servicio que cumpla y supere sus expectativas.</p>
+    </div>
+  </section>
+
+
+  <!-- SERVICIOS DESTACADOS -->
+  <section id="servicios" class="mx-auto max-w-[1440px] px-6 md:px-10 py-20 md:py-32">
+    <div class="flex items-end justify-between flex-wrap gap-4 mb-14">
+      <div>
+        <p class="section-label">02 — Líneas de negocio</p>
+        <h2 class="mt-3 text-4xl md:text-6xl tracking-tightest uppercase">Nuestros servicios mas solicitados</h2>
+      </div>
+      <p class="max-w-sm text-steel text-sm">Cuatro frentes, un mismo estándar: equipo revisado antes de salir y respuesta rápida cuando lo necesitas.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <a href="maquinaria-pesada.html" class="group relative block h-[420px] md:h-[520px] overflow-hidden reveal">
+        <img src="https://picsum.photos/seed/morrent-maquinaria-pesada/1000/1200" alt="Grúa y excavadora Morrent" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent"></div>
+        <div class="absolute bottom-0 p-8">
+          <p class="font-mono text-xs tracking-widest2 uppercase text-yellow">Retro excavadora · minicargador · Excavadoras · Montacargas · motoconformadora · Vibrocompactador</p>
+          <h3 class="mt-2 text-3xl md:text-4xl text-paper tracking-tightest uppercase">Maquinaria Pesada</h3>
+        </div>
+      </a>
+      <a href="suministro-agregados.html" class="group relative block h-[420px] md:h-[520px] overflow-hidden reveal">
+        <img src="https://picsum.photos/seed/morrent-montacargas/1000/1200" alt="Montacargas Morrent" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent"></div>
+        <div class="absolute bottom-0 p-8">
+          <p class="font-mono text-xs tracking-widest2 uppercase text-yellow">Polvo · Grava · Comentante · Piedra · Piedra vista Maya · Tierra Negra · Gravilla · Sascab</p>
+          <h3 class="mt-2 text-3xl md:text-4xl text-paper tracking-tightest uppercase">Suministro de Agregado</h3>
+        </div>
+      </a>
+      <a href="instalaciones-electricas.html" class="group relative block h-[420px] md:h-[520px] overflow-hidden reveal">
+        <img src="https://picsum.photos/seed/morrent-electrico/1000/1200" alt="Instalación eléctrica Morrent" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent"></div>
+        <div class="absolute bottom-0 p-8">
+          <p class="font-mono text-xs tracking-widest2 uppercase text-yellow">Escombro · Material producto de excavación · Basura · Desmonte · Despalme</p>
+          <h3 class="mt-2 text-3xl md:text-4xl text-paper tracking-tightest uppercase">Desalojo de Materiales</h3>
+        </div>
+      </a>
+      <a href="limpieza-playas.html" class="group relative block h-[420px] md:h-[520px] overflow-hidden reveal">
+        <img src="https://picsum.photos/seed/morrent-playas/1000/1200" alt="Limpieza de playas Morrent" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent"></div>
+        <div class="absolute bottom-0 p-8">
+          <p class="font-mono text-xs tracking-widest2 uppercase text-yellow">Por medios mecánicos y manuales</p>
+          <h3 class="mt-2 text-3xl md:text-4xl text-paper tracking-tightest uppercase">Limpieza de Playas</h3>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- POR QUÉ MORRENT -->
+  <section class="bg-haze">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 py-20 md:py-32">
+      <p class="section-label">03 — Diferenciadores</p>
+      <h2 class="mt-3 text-4xl md:text-6xl tracking-tightest uppercase max-w-3xl">Por qué las empresas rentan con Morrent</h2>
+      <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+        <div class="reveal">
+          <span class="font-mono text-orange text-sm">/ 01</span>
+          <h3 class="mt-4 text-2xl tracking-tight">Equipo verificado</h3>
+          <p class="mt-3 text-steel text-sm leading-relaxed">Cada unidad se revisa antes de salir del patio: mecánica, seguridad y documentación en regla.</p>
+        </div>
+        <div class="reveal">
+          <span class="font-mono text-orange text-sm">/ 02</span>
+          <h3 class="mt-4 text-2xl tracking-tight">Entrega puntual</h3>
+          <p class="mt-3 text-steel text-sm leading-relaxed">Coordinamos horarios de entrega y recolección para que tu obra no pare por logística.</p>
+        </div>
+        <div class="reveal">
+          <span class="font-mono text-orange text-sm">/ 03</span>
+          <h3 class="mt-4 text-2xl tracking-tight">Respuesta directa</h3>
+          <p class="mt-3 text-steel text-sm leading-relaxed">Un WhatsApp directo con el equipo de operaciones, sin conmutadores ni esperas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTES / MARQUEE -->
+  <section class="py-16 md:py-20 border-y border-ink/10 overflow-hidden">
+    <p class="text-center section-label mb-10">Empresas que ya confían en nosotros</p>
+    <div class="flex w-max marquee-track">
+      <div class="flex items-center gap-16 pr-16">
+        <span class="font-display text-3xl text-steel-light uppercase">Constructora Delta</span>
+        <span class="font-display text-3xl text-steel-light uppercase">Grupo Ferretero MX</span>
+        <span class="font-display text-3xl text-steel-light uppercase">Industrias Vega</span>
+        <span class="font-display text-3xl text-steel-light uppercase">Litoral Costero</span>
+        <span class="font-display text-3xl text-steel-light uppercase">Electro Bajío</span>
+      </div>
+      <div class="flex items-center gap-16 pr-16" aria-hidden="true">
+        <span class="font-display text-3xl text-steel-light uppercase">Constructora Delta</span>
+        <span class="font-display text-3xl text-steel-light uppercase">Grupo Ferretero MX</span>
+        <span class="font-display text-3xl text-steel-light uppercase">Industrias Vega</span>
+        <span class="font-display text-3xl text-steel-light uppercase">Litoral Costero</span>
+        <span class="font-display text-3xl text-steel-light uppercase">Electro Bajío</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="mx-auto max-w-[1440px] px-6 md:px-10 py-20 md:py-32">
+    <p class="section-label">03 — En campo</p>
+    <h2 class="mt-3 text-4xl md:text-6xl tracking-tightest uppercase max-w-2xl">Trabajos recientes</h2>
+    <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
+      <div class="col-span-2 row-span-2 overflow-hidden reveal">
+        <img src="https://picsum.photos/seed/morrent-gal-1/900/1100" alt="Grúa Morrent en sitio de obra" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+      </div>
+      <div class="overflow-hidden reveal">
+        <img src="https://picsum.photos/seed/morrent-gal-2/500/500" alt="Detalle de excavadora" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+      </div>
+      <div class="overflow-hidden reveal">
+        <img src="https://picsum.photos/seed/morrent-gal-3/500/500" alt="Instalación eléctrica" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+      </div>
+      <div class="overflow-hidden reveal">
+        <img src="https://picsum.photos/seed/morrent-gal-4/500/500" alt="Montacargas en bodega" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+      </div>
+      <div class="overflow-hidden reveal">
+        <img src="https://picsum.photos/seed/morrent-gal-5/500/500" alt="Limpieza de playa" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Mision y Vision -->
+  <section class="mx-auto max-w-[1440px] px-6 md:px-10 py-20 md:py-32">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div>
+        <h3 class="text-steel-light text-2xl font-bold mb-4">Misión</h3>
+        <p class="text-paper-black">Consolidarnos como una empresa integral en arrendamiento de maquinaria pesada para su obra civil, atendiendo las exigencias más altas de nuestros clientes, con servicios de calidad, eficiencia y puntualidad.</p>
+      </div>
+      <div>
+        <h3 class="text-steel-light text-2xl font-bold mb-4">Visión</h3>
+        <p class="text-paper-black"> -Ser una empresa líder en arrendamiento de maquinaria pesada.</p>
+        <p class="text-paper-black"> -Reconocida por nuestra capacidad, seguridad, calidad y cumplimiento</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="relative h-[70vh] min-h-[480px] overflow-hidden">
+    <img src="https://picsum.photos/seed/morrent-cta-final/1920/1000" alt="Equipo Morrent listo para trabajar" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-ink/75"></div>
+    <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+      <h2 class="text-paper text-4xl md:text-6xl tracking-tightest uppercase max-w-3xl reveal">¿Listo para tu próximo proyecto?</h2>
+      <p class="mt-5 text-paper/80 max-w-lg reveal">Cuéntanos qué necesitas y te respondemos el mismo día con disponibilidad y costo.</p>
+      <a href="contacto.html" class="mt-8 btn-primary !bg-yellow !text-ink hover:!bg-orange hover:!text-paper reveal">Solicitar cotización</a>
+    </div>
+  </section>
+
+
+  <footer class="bg-ink text-paper">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div>
+        <span class="font-display text-3xl uppercase tracking-tightest">Morrent</span>
+        <p class="mt-4 text-sm text-steel-light max-w-xs">Renta de maquinaria pesada, instalaciones eléctricas y limpieza de playas. Equipo listo, gente que responde.</p>
+      </div>
+      <div>
+        <p class="section-label mb-4 text-steel-light">Servicios</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="maquinaria-pesada.html" class="text-steel-light hover:text-yellow transition-colors">Maquinaria Pesada</a></li>
+          <li><a href="montacargas.html" class="text-steel-light hover:text-yellow transition-colors">Montacargas</a></li>
+          <li><a href="limpieza-playas.html" class="text-steel-light hover:text-yellow transition-colors">Limpieza de Playas</a></li>
+          <li><a href="remolques-venta.html" class="text-steel-light hover:text-yellow transition-colors">Remolques en Venta</a></li>
+          <li><a href="instalaciones-electricas.html" class="text-steel-light hover:text-yellow transition-colors">Instalaciones Eléctricas</a></li>
+          <li><a href="contacto.html" class="text-steel-light hover:text-yellow transition-colors">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="section-label mb-4 text-steel-light">Contacto</p>
+        <ul class="space-y-2 text-sm text-steel-light">
+          <li><a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%21%21&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="hover:text-yellow transition-colors">WhatsApp directo</a></li>
+          <li><a href="mailto:gerente@morrent.com.mx" class="hover:text-yellow transition-colors">Gerente@morrent.com.mx</a></li>
+          <li>Lun–Vie · 8:00–19:00</li>
+          <li>Sáb · 8:00–13:00</li>
+
+        </ul>
+      </div>
+      <div>
+        <p class="section-label mb-4 text-steel-light">Redes</p>
+        <ul class="space-y-2 text-sm text-steel-light">
+          <li><a href="#" class="hover:text-yellow transition-colors">Facebook</a></li>
+          <li><a href="#" class="hover:text-yellow transition-colors">Instagram</a></li>
+          <li><a href="#" class="hover:text-yellow transition-colors">Ubicación en Google Maps</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="mx-auto max-w-[1440px] px-6 md:px-10 py-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-steel-light font-mono">
+        <span>© 2026 MORRENT. TODOS LOS DERECHOS RESERVADOS.</span>
+        <span>MORRENT.COM.MX</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%21%21&type=phone_number&app_absent=0" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" class="btn-whatsapp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-7 h-7" fill="currentColor">
+      <path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.697 4.61 1.902 6.484L4 29l7.72-1.876A11.94 11.94 0 0 0 16.001 27C22.628 27 28 21.627 28 15S22.628 3 16.001 3zm0 21.818a9.77 9.77 0 0 1-4.98-1.363l-.357-.212-4.583 1.113 1.223-4.465-.232-.366A9.78 9.78 0 0 1 5.182 15c0-5.964 4.855-10.818 10.819-10.818S26.818 9.036 26.818 15 21.965 24.818 16.001 24.818zm5.55-8.146c-.303-.152-1.793-.885-2.07-.986-.278-.101-.48-.152-.682.152-.202.303-.784.986-.961 1.188-.177.202-.354.227-.657.076-.303-.152-1.279-.471-2.436-1.503-.9-.803-1.508-1.795-1.685-2.098-.177-.303-.019-.467.133-.618.137-.136.303-.354.455-.53.152-.177.202-.303.303-.505.101-.202.05-.379-.025-.53-.076-.152-.682-1.645-.935-2.253-.246-.591-.497-.511-.682-.52l-.581-.01c-.202 0-.53.076-.808.379-.278.303-1.06 1.036-1.06 2.528s1.085 2.933 1.236 3.136c.152.202 2.135 3.26 5.174 4.571.723.312 1.287.499 1.727.638.726.231 1.386.198 1.908.12.582-.087 1.793-.733 2.046-1.44.253-.708.253-1.314.177-1.44-.076-.126-.278-.202-.581-.354z"/>
+    </svg>
+  </a>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

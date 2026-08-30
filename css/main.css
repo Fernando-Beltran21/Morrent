@@ -1,0 +1,316 @@
+/* ==============================================================
+   Morrent — main.css
+   Solo estilos personalizados. Las utilidades (grid, flex, spacing,
+   colores, etc.) las genera Tailwind (CDN) a partir de js/tailwind-config.js.
+   ============================================================== */
+
+/* ---------- Base ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  color: #15130F;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Big Shoulders Display', sans-serif;
+}
+
+::selection,
+::-moz-selection {
+  background-color: #F5B400;
+  color: #15130F;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #E0531F;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- Tipografía de apoyo ---------- */
+.eyebrow,
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  font-size: .75rem;
+  letter-spacing: .25em;
+}
+
+.eyebrow { color: #E0531F; }
+.section-label { color: #6E675D; }
+
+/* ---------- Botones ---------- */
+.btn-primary,
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: 1rem 1.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .875rem;
+  text-transform: uppercase;
+  letter-spacing: .025em;
+  transition: all .3s cubic-bezier(.4, 0, .2, 1);
+}
+
+.btn-primary {
+  background-color: #15130F;
+  color: #FFFFFF;
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 92% 100%, 0 100%);
+}
+.btn-primary:hover { background-color: #E0531F; }
+
+.btn-outline {
+  border: 1px solid #15130F;
+  color: #15130F;
+}
+.btn-outline:hover {
+  background-color: #F5B400;
+  border-color: #F5B400;
+  color: #15130F;
+}
+
+.btn-whatsapp {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 40;
+  display: flex;
+  height: 3.5rem;
+  width: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: #1FAE5C;
+  color: #FFFFFF;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,.15), 0 4px 6px -4px rgba(0,0,0,.15);
+  transition: transform .3s cubic-bezier(.4, 0, .2, 1);
+}
+.btn-whatsapp:hover { transform: scale(1.1); }
+
+/* ==============================================================
+   HEADER — dos estados: sobre imagen (transparente) y sólido.
+   El JS solo alterna la clase; todo el look vive aquí.
+   ============================================================== */
+.site-header {
+  transition: background-color .35s ease, box-shadow .35s ease,
+              border-color .35s ease, backdrop-filter .35s ease;
+}
+
+.site-header .brand-name,
+.site-header .brand-tag,
+.site-header .nav-link,
+.site-header .contact-btn,
+.site-header .burger-line {
+  transition: color .3s ease, border-color .3s ease, background-color .3s ease;
+}
+
+.site-header .nav-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .25em;
+}
+
+/* --- Estado "transparente": header flotando sobre una foto --- */
+.site-header.header-transparent {
+  background-color: rgba(21, 19, 15, .30);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+.site-header.header-transparent .brand-name { color: #FFFFFF; }
+.site-header.header-transparent .brand-tag { color: rgba(255, 255, 255, .75); }
+.site-header.header-transparent .nav-link { color: rgba(255, 255, 255, .92); }
+.site-header.header-transparent .nav-link:hover { color: #F5B400; }
+.site-header.header-transparent .contact-btn {
+  border-color: rgba(255, 255, 255, .85);
+  color: #FFFFFF;
+}
+.site-header.header-transparent .contact-btn:hover {
+  background-color: #F5B400;
+  border-color: #F5B400;
+  color: #15130F;
+}
+.site-header.header-transparent .burger-line { background-color: #FFFFFF; }
+
+/* --- Estado "sólido": al hacer scroll, o siempre en páginas internas --- */
+.site-header.header-solid {
+  background-color: rgba(255, 255, 255, .96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(21, 19, 15, .08);
+  box-shadow: 0 1px 2px rgba(21, 19, 15, .04);
+}
+.site-header.header-solid .brand-name { color: #15130F; }
+.site-header.header-solid .brand-tag { color: #6E675D; }
+.site-header.header-solid .nav-link { color: rgba(21, 19, 15, .82); }
+.site-header.header-solid .nav-link:hover { color: #E0531F; }
+.site-header.header-solid .contact-btn {
+  border-color: #15130F;
+  color: #15130F;
+}
+.site-header.header-solid .contact-btn:hover {
+  background-color: #F5B400;
+  border-color: #F5B400;
+  color: #15130F;
+}
+.site-header.header-solid .burger-line { background-color: #15130F; }
+
+/* ---------- Menú móvil ---------- */
+#mobile-menu a {
+  font-family: 'Big Shoulders Display', sans-serif;
+}
+
+/* ---------- Acordeón horizontal de materiales (Agregados) ---------- */
+.agg-accordion {
+  align-items: stretch;
+}
+
+.agg-item {
+  position: relative;
+  flex: 1 1 0%;
+  min-width: 46px;
+  overflow: hidden;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: #15130F;
+  transition: flex-grow .6s cubic-bezier(.25, 1, .5, 1);
+}
+
+.agg-item img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(.72) saturate(.9);
+  transform: scale(1.02);
+  transition: filter .6s ease, transform .8s ease;
+}
+
+.agg-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(21,19,15,.55), rgba(21,19,15,0) 55%);
+  pointer-events: none;
+}
+
+/* Estado expandido: hover en escritorio o .is-active por tap en móvil */
+.agg-item:hover,
+.agg-item.is-active {
+  flex-grow: 3.4;
+}
+.agg-item:hover img,
+.agg-item.is-active img {
+  filter: brightness(.6) saturate(1);
+  transform: scale(1.08);
+}
+
+.material-name {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1.1rem .5rem;
+  font-family: 'Big Shoulders Display', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -.01em;
+  color: #E0531F;
+  font-size: 1.05rem;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  pointer-events: none;
+  transition: font-size .4s ease;
+}
+
+.agg-item:hover .material-name,
+.agg-item.is-active .material-name {
+  writing-mode: horizontal-tb;
+  transform: none;
+  align-items: center;
+  height: 100%;
+  font-size: 1.6rem;
+  white-space: normal;
+  padding-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .material-name { font-size: 1.15rem; }
+  .agg-item:hover .material-name,
+  .agg-item.is-active .material-name { font-size: 2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .agg-item,
+  .agg-item img,
+  .material-name { transition: none; }
+}
+
+/* ---------- Animación de entrada (scroll reveal) ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .8s cubic-bezier(.16, 1, .3, 1),
+              transform .8s cubic-bezier(.16, 1, .3, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ---------- Marquee de clientes ---------- */
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
+@keyframes marquee {
+  0%  { transform: translateX(0); }
+  to  { transform: translateX(-50%); }
+}
+
+/* ---------- Botón WhatsApp pequeño (tarjetas de catálogo) ---------- */
+.btn-whatsapp-sm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
+  width: 100%;
+  padding: .55rem .75rem;
+  background-color: #1FAE5C;
+  color: #FFFFFF;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  transition: background-color .25s ease, transform .25s ease;
+}
+.btn-whatsapp-sm:hover {
+  background-color: #178C49;
+  transform: translateY(-1px);
+}
+
+/* ---------- Utilidades varias ---------- */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
