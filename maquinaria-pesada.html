@@ -6,7 +6,11 @@
   <title>Maquinaria Pesada — Grúas, Volteos y Excavadoras | Morrent</title>
   <meta name="description" content="Renta de grúas, camiones de volteo y excavadoras para obra civil e industrial." />
   
-  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="assets/favicon/site.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -24,15 +28,15 @@
   <header id="site-header" data-hero="false" class="site-header header-transparent fixed inset-x-0 top-0 z-50">
     <div class="mx-auto max-w-[1440px] px-6 md:px-10 flex items-center justify-between h-20 md:h-24">
       <a href="index.html" class="flex flex-col leading-none">
-        <span class="brand-name font-display text-3xl md:text-4xl tracking-tightest uppercase">Morrent</span>
+        <img src="assets/logos/Morrent_LOGO.png" alt="Morrent" class="brand-name h-9 md:h-11 w-auto object-contain" />
         <span class="brand-tag mt-0.5 font-mono text-[10px] tracking-widest2 uppercase hidden md:block">Playa del Carmen · Cancún · Tulum</span>
       </a>
       <nav class="hidden lg:flex items-center gap-9">
         <a href="maquinaria-pesada.html" class="nav-link">Maquinaria Pesada</a>
-        <a href="suministro-agregados.html" class="nav-link">Suministro de Agregados</a>
         <a href="montacargas.html" class="nav-link">Montacargas</a>
         <a href="limpieza-playas.html" class="nav-link">Limpieza de Playas</a>
         <a href="remolques-venta.html" class="nav-link">Remolques en Venta</a>
+        <a href="suministro-agregados.html" class="nav-link">Suministro de Agregados</a>
       </nav>
       <div class="flex items-center gap-4">
         <a href="contacto.html" target="_blank" rel="noopener" class="contact-btn hidden md:inline-flex items-center gap-2 border px-5 py-3 font-mono text-xs uppercase tracking-wide transition-colors">Contacto</a>
@@ -285,6 +289,31 @@
     </div>
   </section>
 
+  <!-- SECCIÓN 5: DESALOJO DE MATERIALES (Full-Width Hero Banner) -->
+  <section id="desalojo-materiales" class="py-6 px-6 md:px-10 max-w-[1440px] mx-auto reveal">
+    <div class="relative w-full h-[55vh] md:h-[65vh] min-h-[450px] overflow-hidden rounded-lg group">
+      <img src="https://picsum.photos/seed/morrent-desalojo-materiales/1920/1080" alt="Desalojo de Materiales" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[2s]">
+
+      <div class="absolute inset-0 bg-ink/50 mix-blend-multiply"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/60 to-transparent"></div>
+
+      <div class="relative z-10 h-full flex flex-col justify-center p-8 md:p-16 max-w-2xl">
+        <p class="font-mono text-xs text-yellow tracking-widest2 uppercase mb-4">Categoría 05</p>
+        <h2 class="text-5xl md:text-7xl font-display uppercase tracking-tight text-paper leading-[0.9] mb-6">Desalojo de<br>Materiales</h2>
+        <p class="text-paper/80 text-sm md:text-base leading-relaxed mb-8 max-w-md">
+          Retiro y transporte de escombro, material producto de excavación, basura, desmonte y despalme. Camiones de volteo listos para dejar tu obra limpia y avanzar al siguiente frente.
+        </p>
+
+        <div class="flex flex-wrap gap-3 mb-8">
+          <span class="inline-flex items-center gap-2 bg-paper/10 backdrop-blur border border-paper/20 px-3 py-1.5 font-mono text-[10px] text-paper uppercase tracking-widest2"><span class="w-1.5 h-1.5 rounded-full bg-yellow"></span> Escombro</span>
+          <span class="inline-flex items-center gap-2 bg-paper/10 backdrop-blur border border-paper/20 px-3 py-1.5 font-mono text-[10px] text-paper uppercase tracking-widest2"><span class="w-1.5 h-1.5 rounded-full bg-yellow"></span> Desmonte y Despalme</span>
+        </div>
+
+        <a href="contacto.html" class="btn-primary !bg-orange w-fit hover:!bg-yellow hover:!text-ink">Solicitar Desalojo</a>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA ORIGINAL -->
   <section class="relative h-[50vh] min-h-[380px] overflow-hidden">
     <img src="https://picsum.photos/seed/morrent-mp-cta/1920/900" alt="Equipo Morrent" class="absolute inset-0 w-full h-full object-cover" />
@@ -300,7 +329,7 @@
   <footer class="bg-ink text-paper">
     <div class="mx-auto max-w-[1440px] px-6 md:px-10 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
       <div>
-        <span class="font-display text-3xl uppercase tracking-tightest">Morrent</span>
+        <img src="assets/logos/Morrent_LOGOBlanco.png" alt="Morrent" class="h-9 w-auto object-contain" />
         <p class="mt-4 text-sm text-steel-light max-w-xs">Renta de maquinaria pesada, instalaciones eléctricas y limpieza de playas. Equipo listo, gente que responde.</p>
       </div>
       <div>
