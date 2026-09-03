@@ -81,13 +81,26 @@
     </div>
   </section>
 
+    <!-- NAV DE CATEGORÍAS -->
+  <nav class="sticky top-0 z-30 bg-paper/95 backdrop-blur border-b border-ink/10">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10">
+      <div class="flex gap-6 md:gap-10 overflow-x-auto hide-scrollbar py-4 font-mono text-xs uppercase tracking-widest2">
+        <a href="#maquinaria_pesada" class="text-steel hover:text-orange transition-colors whitespace-nowrap">01 · Maquinaria Pesada</a>
+        <a href="#gruas" class="text-steel hover:text-orange transition-colors whitespace-nowrap">02 · Grúas</a>
+        <a href="#volteo" class="text-steel hover:text-orange transition-colors whitespace-nowrap">03 · Volteo</a>
+        <a href="#pipas" class="text-steel hover:text-orange transition-colors whitespace-nowrap">04 · Pipas</a>
+        <a href="#desalojo-materiales" class="text-steel hover:text-orange transition-colors whitespace-nowrap">05 · Desalojo de Materiales</a>
+      </div>
+    </div>
+  </nav>
+
   <!-- ========================================== -->
   <!-- INICIO DEL CATÁLOGO (5 SECCIONES)    -->
   <!-- ========================================== -->
   <div id="catalogo" class="pt-10"></div>
 
   <!-- SECCIÓN 1: MAQUINARIA (Slider Horizontal Moderno) -->
-  <section class="py-16 md:py-24 overflow-hidden">
+  <section id="maquinaria_pesada" class="py-16 md:py-24 overflow-hidden">
     <div class="mx-auto max-w-[1440px] px-6 md:px-10 mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
       <div class="reveal">
         <p class="section-label">Categoría 01</p>
@@ -165,7 +178,7 @@
   </section>
 
   <!-- SECCIÓN 2: GRÚAS (Side-by-side Alternado / Dark Mode) -->
-  <section class="bg-ink text-paper py-16 md:py-24">
+  <section id="gruas" class="bg-ink text-paper py-16 md:py-24">
     <div class="mx-auto max-w-[1440px] px-6 md:px-10">
       <div class="mb-12 md:mb-20 text-center reveal">
         <p class="section-label text-steel-light">Categoría 02</p>
@@ -212,7 +225,7 @@
   </section>
 
   <!-- SECCIÓN 3: VOLTEOS (Tarjetas con Hover Reveal) -->
-  <section class="py-16 md:py-24 bg-haze">
+  <section id="volteo" class="py-16 md:py-24 bg-haze">
     <div class="mx-auto max-w-[1440px] px-6 md:px-10">
       <div class="mb-10 reveal text-center md:text-left">
         <p class="section-label">Categoría 03</p>
@@ -273,7 +286,7 @@
   </section>
 
   <!-- SECCIÓN 4: PIPAS (Full-Width Hero Banner) -->
-  <section class="py-6 px-6 md:px-10 max-w-[1440px] mx-auto reveal">
+  <section id="pipas" class="py-6 px-6 md:px-10 max-w-[1440px] mx-auto reveal">
     <div class="relative w-full h-[55vh] md:h-[65vh] min-h-[450px] overflow-hidden rounded-lg group">
       <img src="https://picsum.photos/seed/pipaAgua/1920/1080" srcset="https://picsum.photos/seed/pipaAgua/480/270 480w, https://picsum.photos/seed/pipaAgua/900/506 900w, https://picsum.photos/seed/pipaAgua/1920/1080 1920w" sizes="100vw" alt="Pipa de Agua" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[2s]" width="1920" height="1080" loading="lazy" decoding="async" />
       
