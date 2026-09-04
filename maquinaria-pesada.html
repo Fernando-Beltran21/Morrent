@@ -26,7 +26,7 @@
 
 
 <header id="site-header" data-hero="false" class="site-header header-transparent fixed inset-x-0 top-0 z-50">
-    <div class="mx-auto max-w-[1440px] px-6 md:px-10 flex items-center justify-between h-20 md:h-24">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 grid grid-cols-[auto_1fr_auto] items-center gap-6 h-20 md:h-24">
       
       <!-- Logo: Se añadió items-center y text-center -->
       <a href="index.html" class="flex flex-col items-center text-center leading-none">
@@ -35,7 +35,7 @@
       </a>
       
       <!-- Navegación: Se añadió text-center y leading-tight a los enlaces -->
-      <nav class="hidden lg:flex items-center gap-9">
+      <nav class="hidden lg:flex items-center justify-self-center gap-9">
         <a href="maquinaria-pesada.html" class="nav-link text-center leading-tight">Maquinaria Pesada</a>
         <a href="montacargas.html" class="nav-link text-center leading-tight">Montacargas</a>
         <a href="limpieza-playas.html" class="nav-link text-center leading-tight">Limpieza de Playas</a>
@@ -85,11 +85,11 @@
   <nav class="sticky top-0 z-30 bg-paper/95 backdrop-blur border-b border-ink/10">
     <div class="mx-auto max-w-[1440px] px-6 md:px-10">
       <div class="flex gap-6 md:gap-10 overflow-x-auto hide-scrollbar py-4 font-mono text-xs uppercase tracking-widest2">
-        <a href="#maquinaria_pesada" class="text-steel hover:text-orange transition-colors whitespace-nowrap">01 · Maquinaria Pesada</a>
-        <a href="#gruas" class="text-steel hover:text-orange transition-colors whitespace-nowrap">02 · Grúas</a>
-        <a href="#volteo" class="text-steel hover:text-orange transition-colors whitespace-nowrap">03 · Volteo</a>
-        <a href="#pipas" class="text-steel hover:text-orange transition-colors whitespace-nowrap">04 · Pipas</a>
-        <a href="#desalojo-materiales" class="text-steel hover:text-orange transition-colors whitespace-nowrap">05 · Desalojo de Materiales</a>
+        <a href="#maquinaria_pesada" class="text-steel hover:text-orange transition-colors whitespace-nowrap">Maquinaria Pesada</a>
+        <a href="#gruas" class="text-steel hover:text-orange transition-colors whitespace-nowrap">Grúas</a>
+        <a href="#volteo" class="text-steel hover:text-orange transition-colors whitespace-nowrap">Volteo</a>
+        <a href="#pipas" class="text-steel hover:text-orange transition-colors whitespace-nowrap">Pipas</a>
+        <a href="#desalojo-materiales" class="text-steel hover:text-orange transition-colors whitespace-nowrap">Desalojo de Materiales</a>
       </div>
     </div>
   </nav>
@@ -103,7 +103,7 @@
   <section id="maquinaria_pesada" class="py-16 md:py-24 overflow-hidden">
     <div class="mx-auto max-w-[1440px] px-6 md:px-10 mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
       <div class="reveal">
-        <p class="section-label">Categoría 01</p>
+        <p class="section-label">Categoría</p>
         <h2 class="mt-2 text-4xl md:text-6xl font-display tracking-tightest uppercase text-ink">Maquinaria Pesada</h2>
         <p class="mt-3 text-steel text-sm md:text-base max-w-xl">14 unidades disponibles. Excavadoras y retroexcavadoras para movimiento de tierras preciso.</p>
       </div>
@@ -181,7 +181,7 @@
   <section id="gruas" class="bg-ink text-paper py-16 md:py-24">
     <div class="mx-auto max-w-[1440px] px-6 md:px-10">
       <div class="mb-12 md:mb-20 text-center reveal">
-        <p class="section-label text-steel-light">Categoría 02</p>
+        <p class="section-label text-steel-light">Categoría</p>
         <h2 class="mt-2 text-4xl md:text-6xl font-display tracking-tightest uppercase">Grúas Industriales</h2>
         <p class="mt-3 text-steel-light text-sm md:text-base max-w-2xl mx-auto">Izajes precisos con operadores certificados para estructuras pesadas.</p>
       </div>
@@ -228,7 +228,7 @@
   <section id="volteo" class="py-16 md:py-24 bg-haze">
     <div class="mx-auto max-w-[1440px] px-6 md:px-10">
       <div class="mb-10 reveal text-center md:text-left">
-        <p class="section-label">Categoría 03</p>
+        <p class="section-label">Categoría</p>
         <h2 class="mt-2 text-4xl md:text-6xl font-display tracking-tightest uppercase text-ink">Camiones de Volteo</h2>
         <p class="mt-3 text-steel text-sm md:text-base max-w-xl mx-auto md:mx-0">Acarreo eficiente de material y escombros. Unidades robustas para las exigencias más duras de la obra.</p>
       </div>
@@ -294,7 +294,7 @@
       <div class="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/60 to-transparent"></div>
 
       <div class="relative z-10 h-full flex flex-col justify-center p-8 md:p-16 max-w-2xl">
-        <p class="font-mono text-xs text-yellow tracking-widest2 uppercase mb-4">Categoría 04</p>
+        <p class="font-mono text-xs text-yellow tracking-widest2 uppercase mb-4">Categoría</p>
         <h2 class="text-5xl md:text-7xl font-display uppercase tracking-tight text-paper leading-[0.9] mb-6">Abastecimiento<br>Constante</h2>
         <p class="text-paper/80 text-sm md:text-base leading-relaxed mb-8 max-w-md">
           Pipa de 20,000 Litros. Ideal para riego de terracerías, abastecimiento de cisternas en obra civil y control de polvo en caminos.
@@ -319,7 +319,7 @@
       <div class="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/60 to-transparent"></div>
 
       <div class="relative z-10 h-full flex flex-col justify-center p-8 md:p-16 max-w-2xl">
-        <p class="font-mono text-xs text-yellow tracking-widest2 uppercase mb-4">Categoría 05</p>
+        <p class="font-mono text-xs text-yellow tracking-widest2 uppercase mb-4">Categoría</p>
         <h2 class="text-5xl md:text-7xl font-display uppercase tracking-tight text-paper leading-[0.9] mb-6">Desalojo de<br>Materiales</h2>
         <p class="text-paper/80 text-sm md:text-base leading-relaxed mb-8 max-w-md">
           Retiro y transporte de escombro, material producto de excavación, basura, desmonte y despalme. Camiones de volteo listos para dejar tu obra limpia y avanzar al siguiente frente.
@@ -366,7 +366,7 @@
           <p class="section-label mb-4 text-steel-light">Contacto</p>
           <ul class="space-y-2 text-sm text-steel-light">
             <li><a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%21%21&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="hover:text-yellow transition-colors">WhatsApp directo</a></li>
-            <li><a href="mailto:gerente@morrent.com.mx" class="hover:text-yellow transition-colors">Gerente@morrent.com.mx</a></li>
+            <li><a href="mailto:ventas@morrent.com.mx" class="hover:text-yellow transition-colors">Ventas@morrent.com.mx</a></li>
             <li>Lun–Vie · 8:00–19:00</li>
             <li>Sáb · 8:00–13:00</li>
           </ul>

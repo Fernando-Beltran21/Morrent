@@ -25,7 +25,7 @@
 
 
 <header id="site-header" data-hero="false" class="site-header header-transparent fixed inset-x-0 top-0 z-50">
-    <div class="mx-auto max-w-[1440px] px-6 md:px-10 flex items-center justify-between h-20 md:h-24">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 grid grid-cols-[auto_1fr_auto] items-center gap-6 h-20 md:h-24">
       
       <!-- Logo: Se añadió items-center y text-center -->
       <a href="index.html" class="flex flex-col items-center text-center leading-none">
@@ -34,7 +34,7 @@
       </a>
       
       <!-- Navegación: Se añadió text-center y leading-tight a los enlaces -->
-      <nav class="hidden lg:flex items-center gap-9">
+      <nav class="hidden lg:flex items-center justify-self-center gap-9">
         <a href="maquinaria-pesada.html" class="nav-link text-center leading-tight">Maquinaria Pesada</a>
         <a href="montacargas.html" class="nav-link text-center leading-tight">Montacargas</a>
         <a href="limpieza-playas.html" class="nav-link text-center leading-tight">Limpieza de Playas</a>
@@ -75,10 +75,10 @@
     </div>
   </section>
 
-  <!-- SECCIÓN: INFO DE CONTACTO + MAPA -->
+  <!-- SECCIÓN: INFO DE CONTACTO + REDES + RESEÑAS -->
   <section class="mx-auto max-w-[1440px] px-6 md:px-10 py-16 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
     <div class="reveal">
-      <p class="section-label">01 — Directo</p>
+      <p class="section-label">Directo</p>
       <h2 class="mt-3 text-3xl md:text-4xl font-display tracking-tightest uppercase text-ink">Escríbenos por WhatsApp</h2>
       <p class="mt-5 text-steel text-sm md:text-base leading-relaxed max-w-md">Es la vía más rápida para cotizar. Cuéntanos qué equipo necesitas, por cuánto tiempo y en qué ubicación, y te respondemos el mismo día.</p>
       <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%21%21&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="mt-8 btn-primary !bg-[#1FAE5C] w-fit">Abrir WhatsApp</a>
@@ -86,35 +86,58 @@
       <div class="mt-14 space-y-8 border-t border-ink/10 pt-10">
         <div>
           <p class="section-label">Correo</p>
-          <a href="mailto:gerente@morrent.com.mx" class="mt-1 block text-xl md:text-2xl font-display uppercase tracking-tight hover:text-orange transition-colors">gerente@morrent.com.mx</a>
+          <a href="mailto:ventas@morrent.com.mx" class="mt-1 block text-xl md:text-2xl font-display uppercase tracking-tight hover:text-orange transition-colors">ventas@morrent.com.mx</a>
         </div>
         <div>
           <p class="section-label">Horario</p>
           <p class="mt-1 text-xl md:text-2xl font-display uppercase tracking-tight">Lun–Vie · 8:00–19:00</p>
           <p class="text-xl md:text-2xl font-display uppercase tracking-tight">Sáb · 8:00–13:00</p>
         </div>
-        <div>
-          <p class="section-label">Redes</p>
-          <div class="flex gap-6 mt-2 font-mono text-sm uppercase tracking-widest2">
-            <a href="#" class="hover:text-orange transition-colors">Facebook</a>
-            <a href="#" class="hover:text-orange transition-colors">Instagram</a>
-          </div>
-        </div>
       </div>
     </div>
 
     <div class="reveal" style="transition-delay: 100ms;">
-      <p class="section-label">02 — Ubicación</p>
-      <div class="mt-3 w-full h-[420px] bg-haze border border-ink/10 flex items-center justify-center overflow-hidden">
-        <iframe 
-          src="https://maps.google.com/maps?q=MORRENT-%20RENTA%20DE%20MAQUINARIA%20PESADA%20PARA%20CONSTRUCCION,%20Playa%20del%20Carmen&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-          width="100%" 
-          height="100%" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+      <p class="section-label">Síguenos</p>
+      <h2 class="mt-3 text-3xl md:text-4xl font-display tracking-tightest uppercase text-ink">Nuestras redes</h2>
+      <p class="mt-5 text-steel text-sm md:text-base leading-relaxed max-w-md">Conoce nuestro trabajo día a día y escríbenos directo por cualquiera de estos canales.</p>
+
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="https://www.facebook.com/MorrentPlaya/?locale=es_LA" target="_blank" rel="noopener" aria-label="Facebook" class="w-14 h-14 flex items-center justify-center border border-ink/15 hover:bg-ink hover:text-paper transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94Z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/morrentplaya/" target="_blank" rel="noopener" aria-label="Instagram" class="w-14 h-14 flex items-center justify-center border border-ink/15 hover:bg-ink hover:text-paper transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6" fill="currentColor"><path d="M12 2c-2.72 0-3.06.01-4.13.06-1.06.05-1.79.22-2.43.47-.66.26-1.22.6-1.77 1.15-.55.55-.9 1.11-1.15 1.77-.25.64-.42 1.37-.47 2.43C2 8.94 2 9.28 2 12s.01 3.06.06 4.13c.05 1.06.22 1.79.47 2.43.26.66.6 1.22 1.15 1.77.55.55 1.11.9 1.77 1.15.64.25 1.37.42 2.43.47C8.94 22 9.28 22 12 22s3.06-.01 4.13-.06c1.06-.05 1.79-.22 2.43-.47.66-.26 1.22-.6 1.77-1.15.55-.55.9-1.11 1.15-1.77.25-.64.42-1.37.47-2.43.05-1.07.06-1.41.06-4.13s-.01-3.06-.06-4.13c-.05-1.06-.22-1.79-.47-2.43a5.9 5.9 0 0 0-1.15-1.77 5.9 5.9 0 0 0-1.77-1.15c-.64-.25-1.37-.42-2.43-.47C15.06 2.01 14.72 2 12 2Zm0 1.8c2.67 0 2.99.01 4.04.06.98.04 1.5.21 1.86.34.47.18.8.4 1.15.75.35.35.57.68.75 1.15.13.36.29.88.34 1.86.05 1.05.06 1.37.06 4.04s-.01 2.99-.06 4.04c-.04.98-.21 1.5-.34 1.86-.18.47-.4.8-.75 1.15-.35.35-.68.57-1.15.75-.36.13-.88.29-1.86.34-1.05.05-1.37.06-4.04.06s-2.99-.01-4.04-.06c-.98-.04-1.5-.21-1.86-.34-.47-.18-.8-.4-1.15-.75-.35-.35-.57-.68-.75-1.15-.13-.36-.29-.88-.34-1.86C3.81 14.99 3.8 14.67 3.8 12s.01-2.99.06-4.04c.04-.98.21-1.5.34-1.86.18-.47.4-.8.75-1.15.35-.35.68-.57 1.15-.75.36-.13.88-.29 1.86-.34C9.01 3.81 9.33 3.8 12 3.8Zm0 3.25a4.95 4.95 0 1 0 0 9.9 4.95 4.95 0 0 0 0-9.9Zm0 8.16a3.21 3.21 0 1 1 0-6.42 3.21 3.21 0 0 1 0 6.42Zm5.15-8.36a1.16 1.16 0 1 1-2.31 0 1.16 1.16 0 0 1 2.31 0Z"/></svg>
+        </a>
+        <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%21%21&type=phone_number&app_absent=0" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-14 h-14 flex items-center justify-center border border-ink/15 hover:bg-ink hover:text-paper transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-6 h-6" fill="currentColor"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.697 4.61 1.902 6.484L4 29l7.72-1.876A11.94 11.94 0 0 0 16.001 27C22.628 27 28 21.627 28 15S22.628 3 16.001 3zm0 21.818a9.77 9.77 0 0 1-4.98-1.363l-.357-.212-4.583 1.113 1.223-4.465-.232-.366A9.78 9.78 0 0 1 5.182 15c0-5.964 4.855-10.818 10.819-10.818S26.818 9.036 26.818 15 21.965 24.818 16.001 24.818zm5.55-8.146c-.303-.152-1.793-.885-2.07-.986-.278-.101-.48-.152-.682.152-.202.303-.784.986-.961 1.188-.177.202-.354.227-.657.076-.303-.152-1.279-.471-2.436-1.503-.9-.803-1.508-1.795-1.685-2.098-.177-.303-.019-.467.133-.618.137-.136.303-.354.455-.53.152-.177.202-.303.303-.505.101-.202.05-.379-.025-.53-.076-.152-.682-1.645-.935-2.253-.246-.591-.497-.511-.682-.52l-.581-.01c-.202 0-.53.076-.808.379-.278.303-1.06 1.036-1.06 2.528s1.085 2.933 1.236 3.136c.152.202 2.135 3.26 5.174 4.571.723.312 1.287.499 1.727.638.726.231 1.386.198 1.908.12.582-.087 1.793-.733 2.046-1.44.253-.708.253-1.314.177-1.44-.076-.126-.278-.202-.581-.354z"/></svg>
+        </a>
+      </div>
+
+      <!-- Reseñas de clientes -->
+      <div class="mt-14 border-t border-ink/10 pt-10">
+        <p class="section-label mb-6">Lo que dicen nuestros clientes</p>
+        <div class="space-y-6">
+          <div class="border border-ink/10 p-5">
+            <p class="text-yellow tracking-widest text-sm">★★★★★</p>
+            <p class="mt-2 text-ink text-sm md:text-base leading-relaxed">"Excelente servicio y la mejor atención. Precios justos. Cotiza con ellos, manejan renta de maquinaria pesada."</p>
+            <p class="mt-3 font-mono text-xs uppercase tracking-widest2 text-steel">— Alejandra Sánchez</p>
+          </div>
+          <div class="border border-ink/10 p-5">
+            <p class="text-yellow tracking-widest text-sm">★★★★★</p>
+            <p class="mt-2 text-ink text-sm md:text-base leading-relaxed">"Excelente servicio!!! Solicité volquetes, todo a tiempo!!!, sigan así!!!"</p>
+            <p class="mt-3 font-mono text-xs uppercase tracking-widest2 text-steel">— Reyna Montero</p>
+          </div>
+          <div class="border border-ink/10 p-5">
+            <p class="text-yellow tracking-widest text-sm">★★★★★</p>
+            <p class="mt-2 text-ink text-sm md:text-base leading-relaxed">"Siempre ha sido una buena experiencia trabajar con MORRENT, desde cotizaciones, servicio y facturación."</p>
+            <p class="mt-3 font-mono text-xs uppercase tracking-widest2 text-steel">— Compras Maya Ocean</p>
+          </div>
+          <div class="border border-ink/10 p-5">
+            <p class="text-yellow tracking-widest text-sm">★★★★★</p>
+            <p class="mt-2 text-ink text-sm md:text-base leading-relaxed">"Buen servicio, nos apoya mucho cuando se puede."</p>
+            <p class="mt-3 font-mono text-xs uppercase tracking-widest2 text-steel">— Compras Maya Ocean</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -140,7 +163,7 @@
           <p class="section-label mb-4 text-steel-light">Contacto</p>
           <ul class="space-y-2 text-sm text-steel-light">
             <li><a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%21%21&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="hover:text-yellow transition-colors">WhatsApp directo</a></li>
-            <li><a href="mailto:gerente@morrent.com.mx" class="hover:text-yellow transition-colors">Gerente@morrent.com.mx</a></li>
+            <li><a href="mailto:ventas@morrent.com.mx" class="hover:text-yellow transition-colors">Ventas@morrent.com.mx</a></li>
             <li>Lun–Vie · 8:00–19:00</li>
             <li>Sáb · 8:00–13:00</li>
           </ul>
