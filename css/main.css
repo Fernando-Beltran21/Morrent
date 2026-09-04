@@ -37,6 +37,28 @@ button:focus-visible {
   html { scroll-behavior: auto; }
 }
 
+/* ---------- Entrada suave de la página ---------- */
+body {
+  animation: page-fade-in .6s ease both;
+}
+@keyframes page-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ---------- Barra de progreso de scroll ---------- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2.5px;
+  width: 0%;
+  background: linear-gradient(90deg, #E0531F, #F5B400);
+  z-index: 60;
+  transition: width .12s linear;
+  pointer-events: none;
+}
+
 /* ---------- Tipografía de apoyo ---------- */
 .eyebrow,
 .section-label {
@@ -81,6 +103,15 @@ button:focus-visible {
   color: #15130F;
 }
 
+.btn-primary:hover,
+.btn-outline:hover {
+  transform: translateY(-2px);
+}
+.btn-primary:active,
+.btn-outline:active {
+  transform: translateY(0);
+}
+
 .btn-whatsapp {
   position: fixed;
   bottom: 1.5rem;
@@ -98,6 +129,20 @@ button:focus-visible {
   transition: transform .3s cubic-bezier(.4, 0, .2, 1);
 }
 .btn-whatsapp:hover { transform: scale(1.1); }
+
+.btn-whatsapp::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background-color: #1FAE5C;
+  z-index: -1;
+  animation: wa-pulse 2.6s cubic-bezier(.4, 0, .6, 1) infinite;
+}
+@keyframes wa-pulse {
+  0%   { transform: scale(1);   opacity: .45; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
 
 /* ==============================================================
    HEADER — dos estados: sobre imagen (transparente) y sólido.
@@ -117,10 +162,35 @@ button:focus-visible {
 }
 
 .site-header .nav-link {
+  position: relative;
   font-family: 'JetBrains Mono', monospace;
   font-size: .75rem;
   text-transform: uppercase;
   letter-spacing: .25em;
+}
+
+/* Subrayado minimalista que crece desde el centro */
+.site-header .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0%;
+  height: 1px;
+  background: currentColor;
+  transform: translateX(-50%);
+  transition: width .35s cubic-bezier(.4, 0, .2, 1);
+}
+.site-header .nav-link:hover::after,
+.site-header .nav-link:focus-visible::after {
+  width: 100%;
+}
+
+.brand-name {
+  transition: opacity .3s ease, transform .3s ease;
+}
+.site-header a:hover .brand-name {
+  opacity: .88;
 }
 
 /* --- Estado "transparente": header flotando sobre una foto --- */
@@ -272,6 +342,7 @@ button:focus-visible {
   transform: translateY(28px);
   transition: opacity .8s cubic-bezier(.16, 1, .3, 1),
               transform .8s cubic-bezier(.16, 1, .3, 1);
+  transition-delay: var(--stagger, 0ms);
 }
 .reveal.is-visible {
   opacity: 1;
@@ -281,9 +352,21 @@ button:focus-visible {
   .reveal { opacity: 1; transform: none; transition: none; }
 }
 
+/* Pequeño "pop" en las cifras destacadas al aparecer */
+section.bg-ink .reveal.is-visible p.font-display {
+  animation: pop-in .5s cubic-bezier(.34, 1.56, .64, 1) both;
+}
+@keyframes pop-in {
+  from { transform: scale(.86); }
+  to   { transform: scale(1); }
+}
+
 /* ---------- Marquee de clientes ---------- */
 .marquee-track {
   animation: marquee 28s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
 }
 @keyframes marquee {
   0%  { transform: translateX(0); }
@@ -314,3 +397,62 @@ button:focus-visible {
 /* ---------- Utilidades varias ---------- */
 .hide-scrollbar::-webkit-scrollbar { display: none; }
 .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ---------- Tarjetas de catálogo: elevación + sombra suave al pasar el cursor ---------- */
+.group[data-card],
+.group.card-hover {
+  transition: transform .45s cubic-bezier(.16, 1, .3, 1), box-shadow .45s ease;
+}
+.group[data-card]:hover,
+.group.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -20px rgba(21, 19, 15, .25);
+}
+
+/* ---------- Subrayado animado para enlaces de texto en párrafos ---------- */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size .35s cubic-bezier(.4, 0, .2, 1);
+}
+.link-underline:hover { background-size: 100% 1px; }
+
+/* ---------- Números / cifras que "cuentan" al aparecer (activado por JS) ---------- */
+.count-up {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Iconos: leve rebote al pasar el cursor ---------- */
+.icon-bounce { transition: transform .3s cubic-bezier(.34, 1.56, .64, 1); }
+.icon-bounce:hover,
+.group:hover .icon-bounce { transform: translateY(-3px) scale(1.08); }
+
+/* ---------- Imágenes: aparición con leve desenfoque (blur-up) ---------- */
+img.reveal-img {
+  filter: blur(8px);
+  transform: scale(1.03);
+  transition: filter .9s ease, transform .9s cubic-bezier(.16, 1, .3, 1);
+}
+img.reveal-img.is-loaded {
+  filter: blur(0);
+  transform: scale(1);
+}
+
+/* ---------- Respeto a "reducir movimiento" para todo lo nuevo ---------- */
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none; opacity: 1; }
+  .btn-whatsapp::before { animation: none; display: none; }
+  section.bg-ink .reveal.is-visible p.font-display { animation: none; }
+  .btn-primary:hover,
+  .btn-outline:hover,
+  .btn-primary:active,
+  .btn-outline:active { transform: none; }
+  .scroll-progress { transition: none; }
+  .group[data-card]:hover,
+  .group.card-hover:hover { transform: none; }
+  .icon-bounce:hover,
+  .group:hover .icon-bounce { transform: none; }
+  img.reveal-img { filter: none; transform: none; transition: none; }
+}
