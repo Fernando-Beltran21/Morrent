@@ -121,6 +121,106 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // 7bis. Carrusel de Maquinaria Pesada: flechas, arrastre y barra de progreso
+  (() => {
+    const track = document.getElementById("mp-carousel-track");
+    const prevBtn = document.getElementById("mp-carousel-prev");
+    const nextBtn = document.getElementById("mp-carousel-next");
+    const progressFill = document.getElementById("mp-carousel-progress");
+
+    if (!track) return;
+
+    // Cuánto avanza el carrusel por click: el ancho de una tarjeta + su gap
+    const getStep = () => {
+      const firstCard = track.querySelector(":scope > div");
+      if (!firstCard) return track.clientWidth * 0.8;
+      const styles = window.getComputedStyle(track);
+      const gap = parseFloat(styles.columnGap || styles.gap || "0") || 0;
+      return firstCard.getBoundingClientRect().width + gap;
+    };
+
+    const maxScroll = () => track.scrollWidth - track.clientWidth;
+
+    const updateUI = () => {
+      const max = maxScroll();
+      const current = track.scrollLeft;
+
+      if (prevBtn) prevBtn.disabled = current <= 2;
+      if (nextBtn) nextBtn.disabled = current >= max - 2;
+
+      if (progressFill) {
+        const pct = max > 0 ? (current / max) * 100 : 0;
+        progressFill.style.width = `${Math.min(100, Math.max(0, pct))}%`;
+      }
+    };
+
+    prevBtn?.addEventListener("click", () => {
+      track.scrollBy({ left: -getStep(), behavior: "smooth" });
+    });
+
+    nextBtn?.addEventListener("click", () => {
+      track.scrollBy({ left: getStep(), behavior: "smooth" });
+    });
+
+    // Arrastre con mouse (escritorio) — el touch nativo ya funciona por overflow-x-auto
+    let isDragging = false;
+    let dragStartX = 0;
+    let dragStartScroll = 0;
+    let hasDragged = false;
+
+    track.addEventListener("mousedown", (e) => {
+      isDragging = true;
+      hasDragged = false;
+      track.classList.add("is-dragging");
+      dragStartX = e.pageX;
+      dragStartScroll = track.scrollLeft;
+    });
+
+    window.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+      const delta = e.pageX - dragStartX;
+      if (Math.abs(delta) > 5) hasDragged = true;
+      track.scrollLeft = dragStartScroll - delta;
+    });
+
+    const stopDragging = () => {
+      if (!isDragging) return;
+      isDragging = false;
+      track.classList.remove("is-dragging");
+    };
+
+    window.addEventListener("mouseup", stopDragging);
+    track.addEventListener("mouseleave", stopDragging);
+
+    // Evita que un arrastre termine disparando un click sobre una tarjeta
+    track.addEventListener(
+      "click",
+      (e) => {
+        if (hasDragged) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      },
+      { capture: true }
+    );
+
+    // Navegación con teclado cuando el carrusel tiene foco
+    track.setAttribute("tabindex", "0");
+    track.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") {
+        e.preventDefault();
+        track.scrollBy({ left: getStep(), behavior: "smooth" });
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        track.scrollBy({ left: -getStep(), behavior: "smooth" });
+      }
+    });
+
+    track.addEventListener("scroll", updateUI, { passive: true });
+    window.addEventListener("resize", updateUI);
+    updateUI();
+  })();
+
   // 7. Conteo animado para cifras destacadas (data-count-to="123")
   const countEls = document.querySelectorAll("[data-count-to]");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

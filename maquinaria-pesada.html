@@ -105,73 +105,267 @@
         <h2 class="mt-2 text-4xl md:text-6xl font-display tracking-tightest uppercase text-ink">Maquinaria Pesada</h2>
         <p class="mt-3 text-steel text-sm md:text-base max-w-xl">Encuentra el equipo adecuado para excavación, movimiento de tierra, nivelación, carga y preparación de terreno.</p>
       </div>
-      <div class="flex gap-2 reveal hidden md:flex">
-        <!-- Indicadores visuales de scroll -->
-        <div class="w-10 h-10 border border-ink/20 flex items-center justify-center hover:bg-haze transition-colors cursor-pointer"><span class="font-mono">←</span></div>
-        <div class="w-10 h-10 border border-ink/20 flex items-center justify-center hover:bg-ink hover:text-paper transition-colors cursor-pointer"><span class="font-mono">→</span></div>
+      <div class="flex gap-2 reveal">
+        <!-- Controles de navegación del carrusel -->
+        <button type="button" id="mp-carousel-prev" aria-label="Ver maquinaria anterior" class="carousel-arrow w-10 h-10 border border-ink/20 flex items-center justify-center hover:bg-haze transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"><span class="font-mono">←</span></button>
+        <button type="button" id="mp-carousel-next" aria-label="Ver más maquinaria" class="carousel-arrow w-10 h-10 border border-ink/20 flex items-center justify-center hover:bg-ink hover:text-paper transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"><span class="font-mono">→</span></button>
       </div>
     </div>
 
     <!-- Contenedor Scroll -->
-    <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 px-6 md:px-10 pb-8 mx-auto max-w-[1440px]">
+    <div id="mp-carousel-track" class="carousel-track flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 px-6 md:px-10 pb-8 mx-auto max-w-[1440px] scroll-smooth cursor-grab active:cursor-grabbing">
       
-      <!-- Card Modelo 1 -->
+      <!-- Card: Retroexcavadora CAT 420D -->
       <div class="snap-start shrink-0 w-[85vw] md:w-[400px] group border border-ink/10 hover:border-orange transition-colors duration-300 reveal">
         <div class="overflow-hidden h-64 md:h-72 bg-haze relative">
-          <img src="https://picsum.photos/seed/exc1/600/500" srcset="https://picsum.photos/seed/exc1/480/400 480w, https://picsum.photos/seed/exc1/600/500 600w, https://picsum.photos/seed/exc1/900/750 900w" sizes="(max-width: 767px) 100vw, 33vw" alt="Excavadora CAT 320" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width="600" height="500" loading="lazy" decoding="async" />
-          <div class="absolute top-4 left-4 bg-paper px-2 py-1 font-mono text-[10px] uppercase tracking-widest2 text-ink">Destacado</div>
+          <img src="https://picsum.photos/seed/cat420d/600/500" srcset="https://picsum.photos/seed/cat420d/480/400 480w, https://picsum.photos/seed/cat420d/600/500 600w, https://picsum.photos/seed/cat420d/900/750 900w" sizes="(max-width: 767px) 100vw, 33vw" alt="Retroexcavadora CAT 420D" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width="600" height="500" loading="lazy" decoding="async" />
         </div>
         <div class="p-6 bg-paper">
-          <h3 class="text-2xl font-display uppercase tracking-tight">Excavadora CAT 320</h3>
+          <h3 class="text-2xl font-display uppercase tracking-tight">Retroexcavadora CAT 420D</h3>
+          <p class="mt-3 text-steel text-sm leading-relaxed">Excavación y zanjeo, carga y relleno de material. Apoyo en terracerías y obra civil.</p>
           <ul class="mt-3 space-y-1 font-mono text-xs text-steel tracking-wide border-t border-ink/5 pt-4">
-            <li class="flex justify-between"><span>Peso operativo</span> <span>20 Ton</span></li>
-            <li class="flex justify-between"><span>Cucharón</span> <span>1.2 m³</span></li>
+            <li class="flex justify-between"><span>Tracción</span> <span>4x4</span></li>
+            <li class="flex justify-between"><span>Incluye</span> <span>Operador y combustible</span></li>
           </ul>
-          <a href="#" class="mt-6 inline-block font-mono text-xs uppercase tracking-widest2 text-orange hover:text-ink transition-colors">Cotizar equipo →</a>
         </div>
       </div>
 
-      <!-- Card Modelo 2 -->
+      <!-- Card: Retroexcavadora CAT 420F -->
       <div class="snap-start shrink-0 w-[85vw] md:w-[400px] group border border-ink/10 hover:border-orange transition-colors duration-300 reveal" style="transition-delay: 100ms;">
         <div class="overflow-hidden h-64 md:h-72 bg-haze relative">
-          <img src="https://picsum.photos/seed/exc2/600/500" srcset="https://picsum.photos/seed/exc2/480/400 480w, https://picsum.photos/seed/exc2/600/500 600w, https://picsum.photos/seed/exc2/900/750 900w" sizes="(max-width: 767px) 100vw, 33vw" alt="Retroexcavadora JD" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width="600" height="500" loading="lazy" decoding="async" />
+          <img src="https://picsum.photos/seed/cat420f/600/500" srcset="https://picsum.photos/seed/cat420f/480/400 480w, https://picsum.photos/seed/cat420f/600/500 600w, https://picsum.photos/seed/cat420f/900/750 900w" sizes="(max-width: 767px) 100vw, 33vw" alt="Retroexcavadora CAT 420F" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width="600" height="500" loading="lazy" decoding="async" />
         </div>
         <div class="p-6 bg-paper">
-          <h3 class="text-2xl font-display uppercase tracking-tight">Retroexcavadora JD 310L</h3>
+          <h3 class="text-2xl font-display uppercase tracking-tight">Retroexcavadora CAT 420F</h3>
+          <p class="mt-3 text-steel text-sm leading-relaxed">Excavación y zanjeo, carga y relleno de material. Apoyo en terracerías y obra civil.</p>
           <ul class="mt-3 space-y-1 font-mono text-xs text-steel tracking-wide border-t border-ink/5 pt-4">
-            <li class="flex justify-between"><span>Potencia</span> <span>82 HP</span></li>
             <li class="flex justify-between"><span>Tracción</span> <span>4x4</span></li>
+            <li class="flex justify-between"><span>Incluye</span> <span>Operador y combustible</span></li>
           </ul>
-          <a href="#" class="mt-6 inline-block font-mono text-xs uppercase tracking-widest2 text-orange hover:text-ink transition-colors">Cotizar equipo →</a>
         </div>
       </div>
 
-      <!-- Card Modelo 3 -->
+      <!-- Card: Retroexcavadora CASE 580N -->
       <div class="snap-start shrink-0 w-[85vw] md:w-[400px] group border border-ink/10 hover:border-orange transition-colors duration-300 reveal" style="transition-delay: 200ms;">
         <div class="overflow-hidden h-64 md:h-72 bg-haze relative">
-          <img src="https://picsum.photos/seed/exc3/600/500" srcset="https://picsum.photos/seed/exc3/480/400 480w, https://picsum.photos/seed/exc3/600/500 600w, https://picsum.photos/seed/exc3/900/750 900w" sizes="(max-width: 767px) 100vw, 33vw" alt="Moto CAT" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width="600" height="500" loading="lazy" decoding="async" />
+          <img src="https://picsum.photos/seed/case580n/600/500" srcset="https://picsum.photos/seed/case580n/480/400 480w, https://picsum.photos/seed/case580n/600/500 600w, https://picsum.photos/seed/case580n/900/750 900w" sizes="(max-width: 767px) 100vw, 33vw" alt="Retroexcavadora CASE 580N" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width="600" height="500" loading="lazy" decoding="async" />
         </div>
         <div class="p-6 bg-paper">
-          <h3 class="text-2xl font-display uppercase tracking-tight">Motoconformadora CAT 120</h3>
+          <h3 class="text-2xl font-display uppercase tracking-tight">Retroexcavadora CASE 580N</h3>
+          <p class="mt-3 text-steel text-sm leading-relaxed">Excavación y zanjeo, carga y relleno de material para obra urbana e infraestructura.</p>
           <ul class="mt-3 space-y-1 font-mono text-xs text-steel tracking-wide border-t border-ink/5 pt-4">
-            <li class="flex justify-between"><span>Potencia</span> <span>145 HP</span></li>
-            <li class="flex justify-between"><span>Cuchilla</span> <span>12 pies</span></li>
+            <li class="flex justify-between"><span>Tracción</span> <span>4x2</span></li>
+            <li class="flex justify-between"><span>Incluye</span> <span>Operador y combustible</span></li>
           </ul>
-          <a href="#" class="mt-6 inline-block font-mono text-xs uppercase tracking-widest2 text-orange hover:text-ink transition-colors">Cotizar equipo →</a>
         </div>
       </div>
 
-      <!-- Card "Ver Todo" -->
+      <!-- Card: Retroexcavadora JCB 214e -->
       <div class="snap-start shrink-0 w-[85vw] md:w-[400px] group border border-ink/10 hover:border-orange transition-colors duration-300 reveal" style="transition-delay: 300ms;">
-        <div class="overflow-hidden h-full min-h-[420px] bg-haze relative flex items-center justify-center">
-          <div class="text-center p-6">
-            <span class="text-6xl font-display text-steel-light">+11</span>
-            <p class="font-mono text-xs uppercase tracking-widest2 text-steel mt-2">Modelos Adicionales</p>
-            <button class="mt-6 btn-outline !bg-paper">Ver Inventario Completo</button>
-          </div>
+        <div class="overflow-hidden h-64 md:h-72 bg-haze relative">
+          <img src="https://picsum.photos/seed/jcb214e/600/500" srcset="https://picsum.photos/seed/jcb214e/480/400 480w, https://picsum.photos/seed/jcb214e/600/500 600w, https://picsum.photos/seed/jcb214e/900/750 900w" sizes="(max-width: 767px) 100vw, 33vw" alt="Retroexcavadora JCB 214e" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width="600" height="500" loading="lazy" decoding="async" />
+        </div>
+        <div class="p-6 bg-paper">
+          <h3 class="text-2xl font-display uppercase tracking-tight">Retroexcavadora JCB 214e</h3>
+          <p class="mt-3 text-steel text-sm leading-relaxed">Excavación y zanjeo, carga y relleno de material para obra urbana e infraestructura.</p>
+          <ul class="mt-3 space-y-1 font-mono text-xs text-steel tracking-wide border-t border-ink/5 pt-4">
+            <li class="flex justify-between"><span>Tracción</span> <span>4x2</span></li>
+            <li class="flex justify-between"><span>Incluye</span> <span>Operador y combustible</span></li>
+          </ul>
         </div>
       </div>
 
+      <!-- Card: Retroexcavadora JCB 3CX -->
+      <div class="snap-start shrink-0 w-[85vw] md:w-[400px] group border border-ink/10 hover:border-orange transition-colors duration-300 reveal" style="transition-delay: 300ms;">
+        <div class="overflow-hidden h-64 md:h-72 bg-haze relative">
+          <img src="https://picsum.photos/seed/jcb3cx/600/500" srcset="https://picsum.photos/seed/jcb3cx/480/400 480w, https://picsum.photos/seed/jcb3cx/600/500 600w, https://picsum.photos/seed/jcb3cx/900/750 900w" sizes="(max-width: 767px) 100vw, 33vw" alt="Retroexcavadora JCB 3CX" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width="600" height="500" loading="lazy" decoding="async" />
+        </div>
+        <div class="p-6 bg-paper">
+          <h3 class="text-2xl font-display uppercase tracking-tight">Retroexcavadora JCB 3CX</h3>
+          <p class="mt-3 text-steel text-sm leading-relaxed">Excavación y zanjeo, carga y relleno de material. Apoyo en terracerías y obra civil.</p>
+          <ul class="mt-3 space-y-1 font-mono text-xs text-steel tracking-wide border-t border-ink/5 pt-4">
+            <li class="flex justify-between"><span>Tracción</span> <span>4x4</span></li>
+            <li class="flex justify-between"><span>Incluye</span> <span>Operador y combustible</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card: Minicargador CASE 430 -->
+      <div class="snap-start shrink-0 w-[85vw] md:w-[400px] group border border-ink/10 hover:border-orange transition-colors duration-300 reveal" style="transition-delay: 300ms;">
+        <div class="overflow-hidden h-64 md:h-72 bg-haze relative">
+          <img src="https://picsum.photos/seed/case430/600/500" srcset="https://picsum.photos/seed/case430/480/400 480w, https://picsum.photos/seed/case430/600/500 600w, https://picsum.photos/seed/case430/900/750 900w" sizes="(max-width: 767px) 100vw, 33vw" alt="Minicargador CASE 430" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width="600" height="500" loading="lazy" decoding="async" />
+        </div>
+        <div class="p-6 bg-paper">
+          <h3 class="text-2xl font-display uppercase tracking-tight">Minicargador CASE 430</h3>
+          <p class="mt-3 text-steel text-sm leading-relaxed">Carga y acarreo de material, limpieza de obra y nivelación ligera en espacios reducidos.</p>
+          <ul class="mt-3 space-y-1 font-mono text-xs text-steel tracking-wide border-t border-ink/5 pt-4">
+            <li class="flex justify-between"><span>Tipo</span> <span>Sobre neumáticos</span></li>
+            <li class="flex justify-between"><span>Incluye</span> <span>Operador y combustible</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card: Minicargador Bobcat 863 -->
+      <div class="snap-start shrink-0 w-[85vw] md:w-[400px] group border border-ink/10 hover:border-orange transition-colors duration-300 reveal" style="transition-delay: 300ms;">
+        <div class="overflow-hidden h-64 md:h-72 bg-haze relative">
+          <img src="https://picsum.photos/seed/bobcat863/600/500" srcset="https://picsum.photos/seed/bobcat863/480/400 480w, https://picsum.photos/seed/bobcat863/600/500 600w, https://picsum.photos/seed/bobcat863/900/750 900w" sizes="(max-width: 767px) 100vw, 33vw" alt="Minicargador Bobcat 863" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width="600" height="500" loading="lazy" decoding="async" />
+        </div>
+        <div class="p-6 bg-paper">
+          <h3 class="text-2xl font-display uppercase tracking-tight">Minicargador Bobcat 863</h3>
+          <p class="mt-3 text-steel text-sm leading-relaxed">Carga y acarreo, limpieza y apoyo en obra, operación en áreas confinadas.</p>
+          <ul class="mt-3 space-y-1 font-mono text-xs text-steel tracking-wide border-t border-ink/5 pt-4">
+            <li class="flex justify-between"><span>Tipo</span> <span>Sobre neumáticos</span></li>
+            <li class="flex justify-between"><span>Incluye</span> <span>Operador y combustible</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card: Excavadora Hyundai 220 -->
+      <div class="snap-start shrink-0 w-[85vw] md:w-[400px] group border border-ink/10 hover:border-orange transition-colors duration-300 reveal" style="transition-delay: 300ms;">
+        <div class="overflow-hidden h-64 md:h-72 bg-haze relative">
+          <img src="https://picsum.photos/seed/hyundai220/600/500" srcset="https://picsum.photos/seed/hyundai220/480/400 480w, https://picsum.photos/seed/hyundai220/600/500 600w, https://picsum.photos/seed/hyundai220/900/750 900w" sizes="(max-width: 767px) 100vw, 33vw" alt="Excavadora Hyundai 220" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width="600" height="500" loading="lazy" decoding="async" />
+        </div>
+        <div class="p-6 bg-paper">
+          <h3 class="text-2xl font-display uppercase tracking-tight">Excavadora Hyundai 220</h3>
+          <p class="mt-3 text-steel text-sm leading-relaxed">Excavación profunda y movimiento de grandes volúmenes de material, obra pesada.</p>
+          <ul class="mt-3 space-y-1 font-mono text-xs text-steel tracking-wide border-t border-ink/5 pt-4">
+            <li class="flex justify-between"><span>Peso operativo</span> <span>~22 Ton</span></li>
+            <li class="flex justify-between"><span>Incluye</span> <span>Operador y combustible</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card: Excavadora Caterpillar 320 -->
+      <div class="snap-start shrink-0 w-[85vw] md:w-[400px] group border border-ink/10 hover:border-orange transition-colors duration-300 reveal" style="transition-delay: 300ms;">
+        <div class="overflow-hidden h-64 md:h-72 bg-haze relative">
+          <img src="https://picsum.photos/seed/cat320/600/500" srcset="https://picsum.photos/seed/cat320/480/400 480w, https://picsum.photos/seed/cat320/600/500 600w, https://picsum.photos/seed/cat320/900/750 900w" sizes="(max-width: 767px) 100vw, 33vw" alt="Excavadora Caterpillar 320" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width="600" height="500" loading="lazy" decoding="async" />
+        </div>
+        <div class="p-6 bg-paper">
+          <h3 class="text-2xl font-display uppercase tracking-tight">Excavadora Caterpillar 320</h3>
+          <p class="mt-3 text-steel text-sm leading-relaxed">Excavación profunda, carga a volqueteo y apoyo en terracerías y obra civil pesada.</p>
+          <ul class="mt-3 space-y-1 font-mono text-xs text-steel tracking-wide border-t border-ink/5 pt-4">
+            <li class="flex justify-between"><span>Peso operativo</span> <span>~20 Ton</span></li>
+            <li class="flex justify-between"><span>Incluye</span> <span>Operador y combustible</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card: Motoconformadora XCMG -->
+      <div class="snap-start shrink-0 w-[85vw] md:w-[400px] group border border-ink/10 hover:border-orange transition-colors duration-300 reveal" style="transition-delay: 300ms;">
+        <div class="overflow-hidden h-64 md:h-72 bg-haze relative">
+          <img src="https://picsum.photos/seed/xcmg/600/500" srcset="https://picsum.photos/seed/xcmg/480/400 480w, https://picsum.photos/seed/xcmg/600/500 600w, https://picsum.photos/seed/xcmg/900/750 900w" sizes="(max-width: 767px) 100vw, 33vw" alt="Motoconformadora XCMG" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width="600" height="500" loading="lazy" decoding="async" />
+        </div>
+        <div class="p-6 bg-paper">
+          <h3 class="text-2xl font-display uppercase tracking-tight">Motoconformadora XCMG</h3>
+          <p class="mt-3 text-steel text-sm leading-relaxed">Nivelación y conformación de caminos, perfilado de terracerías y vialidades.</p>
+          <ul class="mt-3 space-y-1 font-mono text-xs text-steel tracking-wide border-t border-ink/5 pt-4">
+            <li class="flex justify-between"><span>Tipo</span> <span>Motoconformadora</span></li>
+            <li class="flex justify-between"><span>Incluye</span> <span>Operador y combustible</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card: Vibrocompactador 10 Ton -->
+      <div class="snap-start shrink-0 w-[85vw] md:w-[400px] group border border-ink/10 hover:border-orange transition-colors duration-300 reveal" style="transition-delay: 300ms;">
+        <div class="overflow-hidden h-64 md:h-72 bg-haze relative">
+          <img src="https://picsum.photos/seed/vibro10/600/500" srcset="https://picsum.photos/seed/vibro10/480/400 480w, https://picsum.photos/seed/vibro10/600/500 600w, https://picsum.photos/seed/vibro10/900/750 900w" sizes="(max-width: 767px) 100vw, 33vw" alt="Vibrocompactador 10 Ton" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width="600" height="500" loading="lazy" decoding="async" />
+        </div>
+        <div class="p-6 bg-paper">
+          <h3 class="text-2xl font-display uppercase tracking-tight">Vibrocompactador 10 Ton</h3>
+          <p class="mt-3 text-steel text-sm leading-relaxed">Compactación de terracerías, subbase, base y rellenos estructurales.</p>
+          <ul class="mt-3 space-y-1 font-mono text-xs text-steel tracking-wide border-t border-ink/5 pt-4">
+            <li class="flex justify-between"><span>Capacidad</span> <span>10 Toneladas</span></li>
+            <li class="flex justify-between"><span>Incluye</span> <span>Operador y combustible</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card: Tractores de Oruga D6 · D8 · D9 -->
+      <div class="snap-start shrink-0 w-[85vw] md:w-[400px] group border border-ink/10 hover:border-orange transition-colors duration-300 reveal" style="transition-delay: 300ms;">
+        <div class="overflow-hidden h-64 md:h-72 bg-haze relative">
+          <img src="https://picsum.photos/seed/orugad6d8d9/600/500" srcset="https://picsum.photos/seed/orugad6d8d9/480/400 480w, https://picsum.photos/seed/orugad6d8d9/600/500 600w, https://picsum.photos/seed/orugad6d8d9/900/750 900w" sizes="(max-width: 767px) 100vw, 33vw" alt="Tractores de Oruga D6 · D8 · D9" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width="600" height="500" loading="lazy" decoding="async" />
+        </div>
+        <div class="p-6 bg-paper">
+          <h3 class="text-2xl font-display uppercase tracking-tight">Tractores de Oruga D6 · D8 · D9</h3>
+          <p class="mt-3 text-steel text-sm leading-relaxed">Empuje y conformación de material, apertura y nivelación de terrenos y plataformas.</p>
+          <ul class="mt-3 space-y-1 font-mono text-xs text-steel tracking-wide border-t border-ink/5 pt-4">
+            <li class="flex justify-between"><span>Modelos</span> <span>D6, D8, D9</span></li>
+            <li class="flex justify-between"><span>Incluye</span> <span>Operador y combustible</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card: Manipulador Telescópico -->
+      <div class="snap-start shrink-0 w-[85vw] md:w-[400px] group border border-ink/10 hover:border-orange transition-colors duration-300 reveal" style="transition-delay: 300ms;">
+        <div class="overflow-hidden h-64 md:h-72 bg-haze relative">
+          <img src="https://picsum.photos/seed/telescopico/600/500" srcset="https://picsum.photos/seed/telescopico/480/400 480w, https://picsum.photos/seed/telescopico/600/500 600w, https://picsum.photos/seed/telescopico/900/750 900w" sizes="(max-width: 767px) 100vw, 33vw" alt="Manipulador Telescópico" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width="600" height="500" loading="lazy" decoding="async" />
+        </div>
+        <div class="p-6 bg-paper">
+          <h3 class="text-2xl font-display uppercase tracking-tight">Manipulador Telescópico</h3>
+          <p class="mt-3 text-steel text-sm leading-relaxed">Carga y colocación de materiales en altura, montaje estructural y logística en obra.</p>
+          <ul class="mt-3 space-y-1 font-mono text-xs text-steel tracking-wide border-t border-ink/5 pt-4">
+            <li class="flex justify-between"><span>Alcance</span> <span>12 a 17 m</span></li>
+            <li class="flex justify-between"><span>Incluye</span> <span>Operador y combustible</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card: Plataforma de Elevación de Tijera -->
+      <div class="snap-start shrink-0 w-[85vw] md:w-[400px] group border border-ink/10 hover:border-orange transition-colors duration-300 reveal" style="transition-delay: 300ms;">
+        <div class="overflow-hidden h-64 md:h-72 bg-haze relative">
+          <img src="https://picsum.photos/seed/tijera/600/500" srcset="https://picsum.photos/seed/tijera/480/400 480w, https://picsum.photos/seed/tijera/600/500 600w, https://picsum.photos/seed/tijera/900/750 900w" sizes="(max-width: 767px) 100vw, 33vw" alt="Plataforma de Elevación de Tijera" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width="600" height="500" loading="lazy" decoding="async" />
+        </div>
+        <div class="p-6 bg-paper">
+          <h3 class="text-2xl font-display uppercase tracking-tight">Plataforma de Elevación de Tijera</h3>
+          <p class="mt-3 text-steel text-sm leading-relaxed">Trabajos en altura, instalaciones eléctricas y mecánicas, obra civil y acabados.</p>
+          <ul class="mt-3 space-y-1 font-mono text-xs text-steel tracking-wide border-t border-ink/5 pt-4">
+            <li class="flex justify-between"><span>Accionamiento</span> <span>Eléctrica o combustible</span></li>
+            <li class="flex justify-between"><span>Incluye</span> <span>Operador y combustible</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card: Plataforma de Elevación Articulada -->
+      <div class="snap-start shrink-0 w-[85vw] md:w-[400px] group border border-ink/10 hover:border-orange transition-colors duration-300 reveal" style="transition-delay: 300ms;">
+        <div class="overflow-hidden h-64 md:h-72 bg-haze relative">
+          <img src="https://picsum.photos/seed/articulada/600/500" srcset="https://picsum.photos/seed/articulada/480/400 480w, https://picsum.photos/seed/articulada/600/500 600w, https://picsum.photos/seed/articulada/900/750 900w" sizes="(max-width: 767px) 100vw, 33vw" alt="Plataforma de Elevación Articulada" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width="600" height="500" loading="lazy" decoding="async" />
+        </div>
+        <div class="p-6 bg-paper">
+          <h3 class="text-2xl font-display uppercase tracking-tight">Plataforma de Elevación Articulada</h3>
+          <p class="mt-3 text-steel text-sm leading-relaxed">Trabajos en altura con obstáculos, acceso lateral y vertical, montaje industrial.</p>
+          <ul class="mt-3 space-y-1 font-mono text-xs text-steel tracking-wide border-t border-ink/5 pt-4">
+            <li class="flex justify-between"><span>Accionamiento</span> <span>Diésel o eléctrica</span></li>
+            <li class="flex justify-between"><span>Incluye</span> <span>Operador y combustible</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card: Generadores Eléctricos 50 a 500 KVA -->
+      <div class="snap-start shrink-0 w-[85vw] md:w-[400px] group border border-ink/10 hover:border-orange transition-colors duration-300 reveal" style="transition-delay: 300ms;">
+        <div class="overflow-hidden h-64 md:h-72 bg-haze relative">
+          <img src="https://picsum.photos/seed/generador/600/500" srcset="https://picsum.photos/seed/generador/480/400 480w, https://picsum.photos/seed/generador/600/500 600w, https://picsum.photos/seed/generador/900/750 900w" sizes="(max-width: 767px) 100vw, 33vw" alt="Generadores Eléctricos 50 a 500 KVA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width="600" height="500" loading="lazy" decoding="async" />
+        </div>
+        <div class="p-6 bg-paper">
+          <h3 class="text-2xl font-display uppercase tracking-tight">Generadores Eléctricos 50 a 500 KVA</h3>
+          <p class="mt-3 text-steel text-sm leading-relaxed">Respaldo eléctrico y alimentación de herramientas para sitios sin red eléctrica.</p>
+          <ul class="mt-3 space-y-1 font-mono text-xs text-steel tracking-wide border-t border-ink/5 pt-4">
+            <li class="flex justify-between"><span>Capacidad</span> <span>50 a 500 KVA</span></li>
+            <li class="flex justify-between"><span>Incluye</span> <span>Operador y combustible</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Barra de progreso del carrusel (se actualiza con el scroll) -->
+    <div class="px-6 md:px-10 mx-auto max-w-[1440px] mb-8 md:mb-10">
+      <div class="carousel-progress-track h-[3px] w-full bg-ink/10 rounded-full overflow-hidden">
+        <div id="mp-carousel-progress" class="carousel-progress-fill h-full bg-orange rounded-full" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <div class="flex justify-center px-6 md:px-10">
+      <a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%21%2C%20Me%20interesa%20cotizar%20maquinaria%20pesada.&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="btn-primary !bg-orange w-fit">Cotizar Maquinaria Pesada por WhatsApp</a>
     </div>
   </section>
 
@@ -180,8 +374,8 @@
     <div class="mx-auto max-w-[1440px] px-6 md:px-10">
       <div class="mb-12 md:mb-20 text-center reveal">
         <p class="section-label text-steel-light">Categoría</p>
-        <h2 class="mt-2 text-4xl md:text-6xl font-display tracking-tightest uppercase">Grúas Industriales</h2>
-        <p class="mt-3 text-steel-light text-sm md:text-base max-w-2xl mx-auto">Izajes precisos con operadores certificados para estructuras pesadas.</p>
+        <h2 class="mt-2 text-4xl md:text-6xl font-display tracking-tightest uppercase">GRÚAS PARA IZAJE Y MONTAJE</h2>
+        <p class="mt-3 text-steel-light text-sm md:text-base max-w-2xl mx-auto">Servicio de grúa con operador para maniobras de izaje, montaje y movimiento de cargas en proyectos de construcción e industria.</p>
       </div>
 
       <div class="space-y-12 md:space-y-0">
@@ -192,13 +386,13 @@
           </div>
           <div class="bg-[#1A1814] p-8 md:p-16 flex flex-col justify-center">
             <span class="font-mono text-xs uppercase tracking-widest2 text-yellow mb-4">Brazo Telescópico</span>
-            <h3 class="text-3xl md:text-5xl font-display uppercase tracking-tight text-paper mb-6">Grúa Titán 25T</h3>
+            <h3 class="text-3xl md:text-5xl font-display uppercase tracking-tight text-paper mb-6">GRÚA TELESCÓPICA · 30 T</h3>
             <p class="text-steel-light text-sm md:text-base leading-relaxed mb-8 max-w-md">Ideal para montajes estructurales de mediana envergadura. Combina excelente movilidad con una capacidad de carga sólida y pluma telescópica de largo alcance.</p>
             <div class="grid grid-cols-2 gap-4 border-t border-white/10 pt-8 mb-8 font-mono text-xs text-paper/80 uppercase tracking-widest2">
-              <div><span class="block text-steel-light mb-1">Capacidad</span> 25 Toneladas</div>
+              <div><span class="block text-steel-light mb-1">Capacidad</span>30 Toneladas</div>
               <div><span class="block text-steel-light mb-1">Pluma</span> 30 Metros</div>
             </div>
-            <button class="btn-primary !bg-yellow !text-ink hover:!bg-paper self-start">Agendar Equipo</button>
+            <button class="btn-primary !bg-yellow !text-ink hover:!bg-paper self-start">Cotizar Equipo</button>
           </div>
         </div>
 
@@ -206,18 +400,36 @@
         <div class="grid grid-cols-1 md:grid-cols-2 group reveal">
           <div class="bg-[#1A1814] p-8 md:p-16 flex flex-col justify-center order-2 md:order-1 border-t md:border-t-0 md:border-r border-white/5">
             <span class="font-mono text-xs uppercase tracking-widest2 text-yellow mb-4">Espacios Confinados</span>
-            <h3 class="text-3xl md:text-5xl font-display uppercase tracking-tight text-paper mb-6">Grúa Hidráulica 12T</h3>
-            <p class="text-steel-light text-sm md:text-base leading-relaxed mb-8 max-w-md">Solución compacta y sumamente versátil para espacios confinados o maniobras rápidas urbanas. Despliegue rápido de estabilizadores.</p>
+            <h3 class="text-3xl md:text-5xl font-display uppercase tracking-tight text-paper mb-6">GRÚA ARTICULADA TIPO HIAB</h3>
+            <p class="text-steel-light text-sm md:text-base leading-relaxed mb-8 max-w-md">Equipo versátil para maniobras de carga, descarga, traslado e instalación de materiales y equipos. Su brazo articulado permite operar con precisión en espacios reducidos y zonas de difícil acceso.</p>
             <div class="grid grid-cols-2 gap-4 border-t border-white/10 pt-8 mb-8 font-mono text-xs text-paper/80 uppercase tracking-widest2">
-              <div><span class="block text-steel-light mb-1">Capacidad</span> 12 Toneladas</div>
-              <div><span class="block text-steel-light mb-1">Pluma</span> 18 Metros</div>
+              <div><span class="block text-steel-light mb-1">Capacidad</span> 5 Toneladas</div>
+              <div><span class="block text-steel-light mb-1">Pluma</span> 12 Metros</div>
             </div>
-            <button class="btn-primary !bg-yellow !text-ink hover:!bg-paper self-start">Agendar Equipo</button>
+            <button class="btn-primary !bg-yellow !text-ink hover:!bg-paper self-start">Cotizar Equipo</button>
           </div>
           <div class="h-[40vh] md:h-[600px] overflow-hidden order-1 md:order-2">
             <img src="https://picsum.photos/seed/grua2/1000/1000" srcset="https://picsum.photos/seed/grua2/480/480 480w, https://picsum.photos/seed/grua2/900/900 900w, https://picsum.photos/seed/grua2/1000/1000 1000w" sizes="(max-width: 767px) 100vw, 50vw" alt="Grúa Hidráulica 12T" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-80 group-hover:opacity-100" width="1000" height="1000" loading="lazy" decoding="async" />
           </div>
         </div>
+        
+         <!-- Grúa 3 (Imagen Izquierda, Texto Derecha) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 group reveal">
+          <div class="h-[40vh] md:h-[600px] overflow-hidden">
+            <img src="https://picsum.photos/seed/grua3/1000/1000" srcset="https://picsum.photos/seed/grua3/480/480 480w, https://picsum.photos/seed/grua3/900/900 900w, https://picsum.photos/seed/grua3/1000/1000 1000w" sizes="(max-width: 767px) 100vw, 50vw" alt="Grúa Titán 25T" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-80 group-hover:opacity-100" width="1000" height="1000" loading="lazy" decoding="async" />
+          </div>
+          <div class="bg-[#1A1814] p-8 md:p-16 flex flex-col justify-center">
+            <span class="font-mono text-xs uppercase tracking-widest2 text-yellow mb-4">ARRASTRE · CARGA · TRASLADO</span>
+            <h3 class="text-3xl md:text-5xl font-display uppercase tracking-tight text-paper mb-6">¿NECESITAS MOVERLO? NOSOTROS LO TRASLADAMOS</h3>
+            <p class="text-steel-light text-sm md:text-base leading-relaxed mb-8 max-w-md">Servicio de plataforma para traslado de equipos, materiales, maquinaria y cargas especiales, sujeto a dimensiones, peso y condiciones de maniobra.</p>
+            <div class="grid grid-cols-2 gap-4 border-t border-white/10 pt-8 mb-8 font-mono text-xs text-paper/80 uppercase tracking-widest2">
+              <div><span class="block text-steel-light mb-1">Capacidad</span>9 Toneladas</div>
+              <div><span class="block text-steel-light mb-1">DIMENCIONES DE LA CAMA</span> 7.5m de largo.  X 2.5 m de ancho </div>
+            </div>
+            <button class="btn-primary !bg-yellow !text-ink hover:!bg-paper self-start">Cotizar Equipo</button>
+          </div>
+        </div>
+        
       </div>
     </div>
   </section>
@@ -227,8 +439,8 @@
     <div class="mx-auto max-w-[1440px] px-6 md:px-10">
       <div class="mb-10 reveal text-center md:text-left">
         <p class="section-label">Categoría</p>
-        <h2 class="mt-2 text-4xl md:text-6xl font-display tracking-tightest uppercase text-ink">Camiones de Volteo</h2>
-        <p class="mt-3 text-steel text-sm md:text-base max-w-xl mx-auto md:mx-0">Acarreo eficiente de material y escombros. Unidades robustas para las exigencias más duras de la obra.</p>
+        <h2 class="mt-2 text-4xl md:text-6xl font-display tracking-tightest uppercase text-ink">VOLQUETES PARA ACARREO Y DESALOJO</h2>
+        <p class="mt-3 text-steel text-sm md:text-base max-w-xl mx-auto md:mx-0">Soluciones para el acarreo, retiro y desalojo de materiales en obra. Contamos con volquetes de 7 m³ y 14 m³ para trabajos de construcción, excavación, limpieza de terrenos y movimiento de materiales.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
@@ -241,19 +453,19 @@
           
           <div class="absolute inset-0 bg-ink/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 md:p-12">
             <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-              <h3 class="text-3xl md:text-4xl font-display uppercase tracking-tight text-paper mb-2">Volteo Doble Eje</h3>
-              <p class="font-mono text-xs text-yellow tracking-widest2 uppercase mb-6">Carga Estándar</p>
+              <h3 class="text-3xl md:text-4xl font-display uppercase tracking-tight text-paper mb-2">VOLQUETE 7 M³</h3>
+              <p class="font-mono text-xs text-yellow tracking-widest2 uppercase mb-6">Versatil y Eficiente</p>
               
               <ul class="space-y-3 font-mono text-sm text-paper/90 border-t border-paper/20 pt-6 mb-8">
-                <li class="flex justify-between"><span>Capacidad</span> <span class="text-white font-bold">14 m³</span></li>
-                <li class="flex justify-between"><span>Suspensión</span> <span class="text-white font-bold">Neumática</span></li>
-                <li class="flex justify-between"><span>Ideal para</span> <span class="text-white font-bold">Agregados y escombro</span></li>
+                <li class="flex justify-between"><span>Capacidad</span> <span class="text-white font-bold">7 m³</span></li>
+                <li class="flex justify-between"><span>Ideal para</span> <span class="text-white font-bold">escombro, tierra, producto de excavación y agregados.</span></li>
+                <li class="flex justify-between"><span class="text-white font-bold">Recomendado para trabajos donde se requiere movilidad y maniobra en espacios más reducidos.</span></li>
               </ul>
               <button class="w-full btn-outline !border-paper !text-paper hover:!bg-paper hover:!text-ink">Cotizar Acarreo</button>
             </div>
           </div>
           
-          <h3 class="absolute bottom-8 left-8 text-3xl md:text-4xl font-display uppercase tracking-tight text-paper transition-opacity duration-300 group-hover:opacity-0">Doble Eje <span class="text-yellow ml-2 text-xl md:text-2xl">14 m³</span></h3>
+          <h3 class="absolute bottom-8 left-8 text-3xl md:text-4xl font-display uppercase tracking-tight text-paper transition-opacity duration-300 group-hover:opacity-0">Volquete<span class="text-yellow ml-2 text-xl md:text-2xl">7 m³</span></h3>
         </div>
 
         <!-- Volteo Card 2 -->
@@ -264,19 +476,19 @@
           
           <div class="absolute inset-0 bg-ink/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 md:p-12">
             <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-              <h3 class="text-3xl md:text-4xl font-display uppercase tracking-tight text-paper mb-2">Tractocamión Góndola</h3>
-              <p class="font-mono text-xs text-yellow tracking-widest2 uppercase mb-6">Alto Volumen</p>
+              <h3 class="text-3xl md:text-4xl font-display uppercase tracking-tight text-paper mb-2">VOLQUETE 14 M³</h3>
+              <p class="font-mono text-xs text-yellow tracking-widest2 uppercase mb-6">MAYOR CAPACIDAD</p>
               
               <ul class="space-y-3 font-mono text-sm text-paper/90 border-t border-paper/20 pt-6 mb-8">
-                <li class="flex justify-between"><span>Capacidad</span> <span class="text-white font-bold">30 m³</span></li>
-                <li class="flex justify-between"><span>Tracción</span> <span class="text-white font-bold">Kenworth T800</span></li>
-                <li class="flex justify-between"><span>Ideal para</span> <span class="text-white font-bold">Movimiento masivo</span></li>
+                <li class="flex justify-between"><span>Capacidad</span> <span class="text-white font-bold">14 m³</span></li>
+                <li class="flex justify-between"><span>Ideal para</span> <span class="text-white font-bold">Grandes volúmenes de tierra, escombro, material de excavación, desmonte y despalme.</span></li>
+                <li class="flex justify-between"><span class="text-white font-bold">Recomendado para obras y proyectos que requieren mayor capacidad de acarreo.</span></li>
               </ul>
               <button class="w-full btn-outline !border-paper !text-paper hover:!bg-paper hover:!text-ink">Cotizar Acarreo</button>
             </div>
           </div>
           
-          <h3 class="absolute bottom-8 left-8 text-3xl md:text-4xl font-display uppercase tracking-tight text-paper transition-opacity duration-300 group-hover:opacity-0">Góndola <span class="text-yellow ml-2 text-xl md:text-2xl">30 m³</span></h3>
+          <h3 class="absolute bottom-8 left-8 text-3xl md:text-4xl font-display uppercase tracking-tight text-paper transition-opacity duration-300 group-hover:opacity-0">Volquete<span class="text-yellow ml-2 text-xl md:text-2xl">14 m³</span></h3>
         </div>
 
       </div>
@@ -293,42 +505,17 @@
 
       <div class="relative z-10 h-full flex flex-col justify-center p-8 md:p-16 max-w-2xl">
         <p class="font-mono text-xs text-yellow tracking-widest2 uppercase mb-4">Categoría</p>
-        <h2 class="text-5xl md:text-7xl font-display uppercase tracking-tight text-paper leading-[0.9] mb-6">Abastecimiento<br>Constante</h2>
+        <h2 class="text-5xl md:text-7xl font-display uppercase tracking-tight text-paper leading-[0.9] mb-6">Suministro de<br>Agua Potable</h2>
         <p class="text-paper/80 text-sm md:text-base leading-relaxed mb-8 max-w-md">
-          Pipa de 20,000 Litros. Ideal para riego de terracerías, abastecimiento de cisternas en obra civil y control de polvo en caminos.
+          En pipas de 10,000 y 20,000 litros para abastecimiento de cisternas, tanques y depósitos. Servicio para obras, comercios, desarrollos, condominios y propiedades que requieren suministro de agua en sitio.
         </p>
         
         <div class="flex flex-wrap gap-3 mb-8">
-          <span class="inline-flex items-center gap-2 bg-paper/10 backdrop-blur border border-paper/20 px-3 py-1.5 font-mono text-[10px] text-paper uppercase tracking-widest2"><span class="w-1.5 h-1.5 rounded-full bg-yellow"></span> 20,000 Litros</span>
+          <span class="inline-flex items-center gap-2 bg-paper/10 backdrop-blur border border-paper/20 px-3 py-1.5 font-mono text-[10px] text-paper uppercase tracking-widest2"><span class="w-1.5 h-1.5 rounded-full bg-yellow"></span> 10,000 a 20,000 Litros</span>
           <span class="inline-flex items-center gap-2 bg-paper/10 backdrop-blur border border-paper/20 px-3 py-1.5 font-mono text-[10px] text-paper uppercase tracking-widest2"><span class="w-1.5 h-1.5 rounded-full bg-yellow"></span> Motobomba Incluida</span>
         </div>
         
         <a href="#" class="btn-primary !bg-orange w-fit hover:!bg-yellow hover:!text-ink">Solicitar Pipa</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECCIÓN 5: DESALOJO DE MATERIALES (Full-Width Hero Banner) -->
-  <section id="desalojo-materiales" class="py-6 px-6 md:px-10 max-w-[1440px] mx-auto reveal">
-    <div class="relative w-full h-[55vh] md:h-[65vh] min-h-[450px] overflow-hidden rounded-lg group">
-      <img src="https://picsum.photos/seed/morrent-desalojo-materiales/1920/1080" srcset="https://picsum.photos/seed/morrent-desalojo-materiales/480/270 480w, https://picsum.photos/seed/morrent-desalojo-materiales/900/506 900w, https://picsum.photos/seed/morrent-desalojo-materiales/1920/1080 1920w" sizes="100vw" alt="Desalojo de Materiales" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[2s]" width="1920" height="1080" loading="lazy" decoding="async" />
-
-      <div class="absolute inset-0 bg-ink/50 mix-blend-multiply"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/60 to-transparent"></div>
-
-      <div class="relative z-10 h-full flex flex-col justify-center p-8 md:p-16 max-w-2xl">
-        <p class="font-mono text-xs text-yellow tracking-widest2 uppercase mb-4">Categoría</p>
-        <h2 class="text-5xl md:text-7xl font-display uppercase tracking-tight text-paper leading-[0.9] mb-6">Desalojo de<br>Materiales</h2>
-        <p class="text-paper/80 text-sm md:text-base leading-relaxed mb-8 max-w-md">
-          Retiro y transporte de escombro, material producto de excavación, basura, desmonte y despalme. Camiones de volteo listos para dejar tu obra limpia y avanzar al siguiente frente.
-        </p>
-
-        <div class="flex flex-wrap gap-3 mb-8">
-          <span class="inline-flex items-center gap-2 bg-paper/10 backdrop-blur border border-paper/20 px-3 py-1.5 font-mono text-[10px] text-paper uppercase tracking-widest2"><span class="w-1.5 h-1.5 rounded-full bg-yellow"></span> Escombro</span>
-          <span class="inline-flex items-center gap-2 bg-paper/10 backdrop-blur border border-paper/20 px-3 py-1.5 font-mono text-[10px] text-paper uppercase tracking-widest2"><span class="w-1.5 h-1.5 rounded-full bg-yellow"></span> Desmonte y Despalme</span>
-        </div>
-
-        <a href="contacto.html" class="btn-primary !bg-orange w-fit hover:!bg-yellow hover:!text-ink">Solicitar Desalojo</a>
       </div>
     </div>
   </section>
@@ -339,7 +526,7 @@
     <div class="absolute inset-0 bg-ink/80"></div>
     <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
       <h2 class="text-paper text-3xl md:text-5xl tracking-tightest uppercase max-w-2xl reveal">¿Necesitas maquinaria para tu obra?</h2>
-      <p class="mt-4 text-paper/80 max-w-lg reveal">Dinos qué proyecto tienes y te cotizamos hoy mismo.</p>
+      <p class="mt-4 text-paper/80 max-w-lg reveal">Cuéntanos de tu proyecto y te ayudaremos a encontrar la mejor solución.</p>
       <a href="contacto.html" class="mt-7 btn-primary !bg-yellow !text-ink hover:!bg-orange hover:!text-paper reveal">Solicitar cotización</a>
     </div>
   </section>
@@ -348,7 +535,7 @@
       <div class="mx-auto max-w-[1440px] px-6 md:px-10 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
         <div>
           <img src="assets/logos/Morrent_LOGOBlanco.png" alt="Morrent" class="h-9 w-auto object-contain" width="1017" height="252" loading="lazy" decoding="async" />
-          <p class="mt-4 text-sm text-steel-light max-w-xs">Renta de maquinaria pesada, instalaciones eléctricas y limpieza de playas. Equipo listo, gente que responde.</p>
+          <p class="mt-4 text-sm text-steel-light max-w-xs">Maquinaria, materiales y soluciones para mantener tu proyecto en movimiento. Atención directa en Playa del Carmen, Cancún y Tulum.</p>
         </div>
         <div>
           <p class="section-label mb-4 text-steel-light">Servicios</p>
@@ -356,6 +543,7 @@
             <li><a href="maquinaria-pesada.html" class="text-steel-light hover:text-yellow transition-colors">Maquinaria Pesada</a></li>
             <li><a href="montacargas.html" class="text-steel-light hover:text-yellow transition-colors">Montacargas</a></li>
             <li><a href="limpieza-playas.html" class="text-steel-light hover:text-yellow transition-colors">Limpieza de Playas</a></li>
+            <li><a href="suministro-agregados.html" class="text-steel-light hover:text-yellow transition-colors">Suministro de Agregados</a></li>
             <li><a href="remolques-venta.html" class="text-steel-light hover:text-yellow transition-colors">Remolques en Venta</a></li>
             <li><a href="contacto.html" class="text-steel-light hover:text-yellow transition-colors">Contacto</a></li>
           </ul>
@@ -363,10 +551,11 @@
         <div>
           <p class="section-label mb-4 text-steel-light">Contacto</p>
           <ul class="space-y-2 text-sm text-steel-light">
-            <li><a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%21%21&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="hover:text-yellow transition-colors">WhatsApp directo</a></li>
-            <li><a href="mailto:ventas@morrent.com.mx" class="hover:text-yellow transition-colors">Ventas@morrent.com.mx</a></li>
-            <li>Lun–Vie · 8:00–19:00</li>
+            <li><a href="https://api.whatsapp.com/send/?phone=529841518477&text=Hola%21%21&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="hover:text-yellow transition-colors">WhatsApp 984 151 84 77</a></li>
+            <li><a href="mailto:administracion@morrent.com.mx" class="hover:text-yellow transition-colors">administracion@morrent.com.mx</a></li>
+            <li>Lun–Vie · 8:00–18:00</li>
             <li>Sáb · 8:00–13:00</li>
+            <li>Playa del Carmen · Quintana Roo</li>
           </ul>
         </div>
         <div>
@@ -374,13 +563,13 @@
           <ul class="space-y-2 text-sm text-steel-light">
             <li><a href="https://www.facebook.com/MorrentPlaya/?locale=es_LA" class="hover:text-yellow transition-colors">Facebook</a></li>
             <li><a href="https://www.instagram.com/morrentplaya/" class="hover:text-yellow transition-colors">Instagram</a></li>
-            <li><a href="https://maps.app.goo.gl/5ALDSAvHq6Xqt78i9" class="hover:text-yellow transition-colors">Ubicación en Google Maps</a></li>
+            <li><a href="https://maps.app.goo.gl/5ALDSAvHq6Xqt78i9" class="hover:text-yellow transition-colors">Google Maps</a></li>
           </ul>
         </div>
       </div>
       <div class="border-t border-white/10">
         <div class="mx-auto max-w-[1440px] px-6 md:px-10 py-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-steel-light font-mono">
-          <span>© 2026 MORRENT. TODOS LOS DERECHOS RESERVADOS.</span>
+          <span>© 2026 MORRENT · TODOS LOS DERECHOS RESERVADOS.</span>
           
           <!-- Contenedor agrupado para el dominio y los créditos -->
           <div class="flex flex-col md:flex-row items-center gap-3">

@@ -398,6 +398,16 @@ section.bg-ink .reveal.is-visible p.font-display {
 .hide-scrollbar::-webkit-scrollbar { display: none; }
 .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
+/* ---------- Carrusel de maquinaria: navegación funcional ---------- */
+.carousel-track { -webkit-overflow-scrolling: touch; }
+.carousel-track.is-dragging { scroll-snap-type: none; cursor: grabbing; }
+.carousel-arrow[disabled] { pointer-events: none; }
+.carousel-progress-fill { transition: width 0.15s ease-out; }
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track { scroll-behavior: auto; }
+}
+
 /* ---------- Tarjetas de catálogo: elevación + sombra suave al pasar el cursor ---------- */
 .group[data-card],
 .group.card-hover {
