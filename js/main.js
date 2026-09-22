@@ -44,19 +44,58 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileMenu = document.getElementById("mobile-menu");
 
   if (menuBtn && mobileMenu) {
+    const menuLinks = Array.from(mobileMenu.querySelectorAll("a"));
+
+    const openMenu = () => {
+      mobileMenu.classList.add("translate-x-0");
+      mobileMenu.classList.remove("translate-x-full");
+      menuBtn.classList.add("is-open");
+      menuBtn.setAttribute("aria-expanded", "true");
+      document.body.classList.add("menu-open");
+      // Mueve el foco al primer enlace para lectores de pantalla y navegación por teclado
+      if (menuLinks[0]) menuLinks[0].focus({ preventScroll: true });
+    };
+
+    const closeMenu = ({ restoreFocus = false } = {}) => {
+      mobileMenu.classList.add("translate-x-full");
+      mobileMenu.classList.remove("translate-x-0");
+      menuBtn.classList.remove("is-open");
+      menuBtn.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
+      if (restoreFocus) menuBtn.focus({ preventScroll: true });
+    };
+
     menuBtn.addEventListener("click", () => {
-      const isOpen = mobileMenu.classList.toggle("translate-x-0");
-      mobileMenu.classList.toggle("translate-x-full", !isOpen);
-      menuBtn.setAttribute("aria-expanded", String(isOpen));
+      const isOpen = menuBtn.getAttribute("aria-expanded") === "true";
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
     });
 
     // Cerrar menú al presionar sobre un enlace
-    mobileMenu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        mobileMenu.classList.add("translate-x-full");
-        mobileMenu.classList.remove("translate-x-0");
-        menuBtn.setAttribute("aria-expanded", "false");
-      });
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", () => closeMenu());
+    });
+
+    // Cerrar con la tecla Escape (accesibilidad de teclado)
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && menuBtn.getAttribute("aria-expanded") === "true") {
+        closeMenu({ restoreFocus: true });
+      }
+    });
+
+    // Cerrar al tocar el fondo del menú (fuera de los enlaces)
+    mobileMenu.addEventListener("click", (e) => {
+      if (e.target === mobileMenu) closeMenu();
+    });
+
+    // Si la ventana pasa a escritorio con el menú abierto, se cierra solo
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 1024 && menuBtn.getAttribute("aria-expanded") === "true") {
+        closeMenu();
+      }
     });
   }
 

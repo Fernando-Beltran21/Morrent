@@ -243,97 +243,83 @@ body {
   font-family: 'Big Shoulders Display', sans-serif;
 }
 
-/* ---------- Acordeón horizontal de materiales (Agregados) ---------- */
-.agg-accordion {
-  align-items: stretch;
-}
-
-.agg-item {
-  position: relative;
-  flex: 1 1 0%;
-  min-width: 46px;
+/* ---------- Cuadrícula de materiales (Agregados) ---------- */
+.agg-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid rgba(21,19,15,.08);
+  border-radius: 14px;
   overflow: hidden;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  background: #15130F;
-  transition: flex-grow .6s cubic-bezier(.25, 1, .5, 1);
+  box-shadow: 0 4px 14px rgba(21,19,15,.06);
+  transition: box-shadow .3s ease, transform .3s ease;
 }
 
-.agg-item img {
+.agg-card:hover {
+  box-shadow: 0 10px 24px rgba(21,19,15,.12);
+  transform: translateY(-3px);
+}
+
+.agg-card-img {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #15130F;
+}
+
+.agg-card-img img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(.72) saturate(.9);
   transform: scale(1.02);
-  transition: filter .6s ease, transform .8s ease;
+  transition: transform .6s cubic-bezier(.25, 1, .5, 1), filter .6s ease;
 }
 
-.agg-item::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(21,19,15,.55), rgba(21,19,15,0) 55%);
-  pointer-events: none;
-}
-
-/* Estado expandido: hover en escritorio o .is-active por tap en móvil */
-.agg-item:hover,
-.agg-item.is-active {
-  flex-grow: 3.4;
-}
-.agg-item:hover img,
-.agg-item.is-active img {
-  filter: brightness(.6) saturate(1);
+.agg-card:hover .agg-card-img img {
   transform: scale(1.08);
 }
 
-.material-name {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 1.1rem .5rem;
+.agg-card-body {
+  padding: 1.1rem 1.2rem 1.4rem;
+}
+
+.agg-card-name {
   font-family: 'Big Shoulders Display', sans-serif;
   text-transform: uppercase;
   letter-spacing: -.01em;
-  color: #ffaa3b;
-  font-size: 1.05rem;
-  line-height: 1;
-  text-align: center;
-  white-space: nowrap;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  pointer-events: none;
-  transition: font-size .4s ease;
+  color: #15130F;
+  font-size: 1.3rem;
+  line-height: 1.1;
+  position: relative;
+  padding-bottom: .7rem;
+  margin-bottom: .7rem;
 }
 
-.agg-item:hover .material-name,
-.agg-item.is-active .material-name {
-  writing-mode: horizontal-tb;
-  transform: none;
-  align-items: center;
-  height: 100%;
-  font-size: 1.6rem;
-  white-space: normal;
-  padding-bottom: 1.5rem;
+.agg-card-name::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2rem;
+  height: 3px;
+  background: #E0531F;
+}
+
+.agg-card-desc {
+  font-size: .85rem;
+  line-height: 1.45;
+  color: #6E675D;
 }
 
 @media (min-width: 768px) {
-  .material-name { font-size: 1.15rem; }
-  .agg-item:hover .material-name,
-  .agg-item.is-active .material-name { font-size: 2rem; }
+  .agg-card-name { font-size: 1.4rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .agg-item,
-  .agg-item img,
-  .material-name { transition: none; }
+  .agg-card-img img { transition: none; }
+  .agg-card { transition: none; }
 }
 
 /* ---------- Animación de entrada (scroll reveal) ---------- */
@@ -466,3 +452,86 @@ img.reveal-img.is-loaded {
   .group:hover .icon-bounce { transform: none; }
   img.reveal-img { filter: none; transform: none; transition: none; }
 }
+/* ---------- Menú móvil: mejoras de UX (bloqueo scroll, animación burger) ---------- */
+body.menu-open {
+  overflow: hidden;
+}
+
+#menu-toggle .burger-line {
+  transition: transform .35s cubic-bezier(.4,0,.2,1), opacity .25s ease, width .25s ease;
+  transform-origin: center;
+}
+
+/* Anima las 3 líneas del botón hamburguesa a una "X" cuando el menú está abierto */
+#menu-toggle.is-open .burger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+  width: 1.5rem;
+}
+#menu-toggle.is-open .burger-line:nth-child(2) {
+  opacity: 0;
+}
+#menu-toggle.is-open .burger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+  width: 1.5rem;
+  align-self: center;
+}
+
+/* El botón hamburguesa siempre se ve blanco sobre el panel oscuro del menú abierto */
+#menu-toggle.is-open .burger-line {
+  background-color: #FFFFFF !important;
+}
+
+/* ---------- Menú móvil: panel y enlaces ---------- */
+#mobile-menu {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#mobile-menu a {
+  font-family: 'Big Shoulders Display', sans-serif;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .4s ease, transform .4s ease;
+}
+
+/* Entrada escalonada de los enlaces cuando el menú está visible */
+#mobile-menu.translate-x-0 a {
+  opacity: 1;
+  transform: translateY(0);
+}
+#mobile-menu.translate-x-0 a:nth-child(1) { transition-delay: .08s; }
+#mobile-menu.translate-x-0 a:nth-child(2) { transition-delay: .13s; }
+#mobile-menu.translate-x-0 a:nth-child(3) { transition-delay: .18s; }
+#mobile-menu.translate-x-0 a:nth-child(4) { transition-delay: .23s; }
+#mobile-menu.translate-x-0 a:nth-child(5) { transition-delay: .28s; }
+#mobile-menu.translate-x-0 a:nth-child(6) { transition-delay: .33s; }
+#mobile-menu.translate-x-0 a:nth-child(7) { transition-delay: .38s; }
+
+/* Enlace de la página actual, resaltado dentro del menú móvil */
+#mobile-menu a.is-current {
+  color: #F5B400;
+  position: relative;
+}
+#mobile-menu a.is-current::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 2.5rem;
+  height: 3px;
+  background: #F5B400;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #mobile-menu a,
+  #menu-toggle .burger-line {
+    transition: none !important;
+  }
+}
+
+/* Enlace activo en la navegación de escritorio (página actual) */
+.site-header .nav-link.is-current::after {
+  width: 100%;
+}
+.site-header.header-transparent .nav-link.is-current { color: #F5B400; }
+.site-header.header-solid .nav-link.is-current { color: #E0531F; }
