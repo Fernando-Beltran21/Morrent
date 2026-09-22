@@ -4,9 +4,34 @@
    colores, etc.) las genera Tailwind (CDN) a partir de js/tailwind-config.js.
    ============================================================== */
 
+/* ---------- Títulos H1 de hero: vw con límites (clamp) ----------
+   Antes usaban solo vw puro, sin techo. Eso hace que en pantallas
+   angostas "grandes" (cerca de 767px, justo antes del breakpoint md)
+   el texto crezca demasiado, y que en monitores muy anchos (>1600px)
+   crezca sin límite. clamp(min, preferido-en-vw, max) resuelve ambos
+   extremos sin perder el efecto tipográfico grande que ya tenía el sitio. */
+.hero-h1-1 { font-size: clamp(2.75rem, 13vw, 6.5rem); }
+@media (min-width: 768px) { .hero-h1-1 { font-size: clamp(4rem, 7.2vw, 8.5rem); } }
+
+.hero-h1-2 { font-size: clamp(2.5rem, 12vw, 6rem); }
+@media (min-width: 768px) { .hero-h1-2 { font-size: clamp(3.5rem, 6.5vw, 7.5rem); } }
+
+.hero-h1-3 { font-size: clamp(2.25rem, 11vw, 5.5rem); }
+@media (min-width: 768px) { .hero-h1-3 { font-size: clamp(3rem, 5.5vw, 6.5rem); } }
+
+.hero-h1-4 { font-size: clamp(2.25rem, 10vw, 5rem); }
+@media (min-width: 768px) { .hero-h1-4 { font-size: clamp(3rem, 5.5vw, 6.5rem); } }
+
 /* ---------- Base ---------- */
 html {
   scroll-behavior: smooth;
+  /* Evita que el header fijo tape el destino al navegar a un ancla
+     (#servicios, #proceso, #gruas...). Suma la altura real del header
+     (h-20/h-24 = 80px/96px) más su padding de safe-area. */
+  scroll-padding-top: calc(5.5rem + env(safe-area-inset-top, 0px));
+}
+@media (min-width: 768px) {
+  html { scroll-padding-top: calc(6.5rem + env(safe-area-inset-top, 0px)); }
 }
 
 body {
@@ -114,8 +139,8 @@ body {
 
 .btn-whatsapp {
   position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
+  bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+  right: calc(1.5rem + env(safe-area-inset-right, 0px));
   z-index: 40;
   display: flex;
   height: 3.5rem;
@@ -151,6 +176,10 @@ body {
 .site-header {
   transition: background-color .35s ease, box-shadow .35s ease,
               border-color .35s ease, backdrop-filter .35s ease;
+  /* Empuja el contenido del header por debajo del notch / isla dinámica
+     en iPhone y de la barra de estado en Android, sin afectar la altura
+     del header en dispositivos sin recorte (el env() vale 0 ahí). */
+  padding-top: env(safe-area-inset-top, 0px);
 }
 
 .site-header .brand-name,
@@ -436,6 +465,123 @@ img.reveal-img.is-loaded {
   transform: scale(1);
 }
 
+/* ==============================================================
+   ANIMACIONES NUEVAS
+   ============================================================== */
+
+/* ---------- 1) Ken Burns sutil en la imagen del hero ----------
+   Zoom lento y continuo, casi imperceptible, típico de sitios de
+   servicios/turismo. Se pausa solo con reduced-motion.
+   Uso: agregar la clase "ken-burns" al <img> del hero. */
+.ken-burns {
+  animation: ken-burns 22s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes ken-burns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
+}
+
+/* ---------- 2) Barrido de luz (shine) en tarjetas con imagen ----------
+   Un destello diagonal cruza la tarjeta al pasar el cursor, además
+   del scale que ya tenían. Se ve premium en las tarjetas de
+   "Servicios destacados" y en la galería.
+   Uso: agregar la clase "shine-card" al contenedor <a>/<div> que
+   ya tiene overflow-hidden (las tarjetas de imagen). */
+.shine-card { position: relative; }
+.shine-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 40%, rgba(255,255,255,.35) 50%, transparent 60%);
+  background-size: 250% 250%;
+  background-position: 120% 120%;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+.shine-card:hover::after {
+  opacity: 1;
+  animation: shine-sweep 1.1s ease forwards;
+}
+@keyframes shine-sweep {
+  from { background-position: 120% 120%; }
+  to   { background-position: -20% -20%; }
+}
+
+/* ---------- 3) Línea que se dibuja bajo los "eyebrow"/section-label ----------
+   Un pequeño trazo naranja crece de 0 a su ancho final cuando el
+   bloque entra en pantalla (se combina con .reveal existente).
+   Uso: envolver o aplicar junto a .reveal en el <p class="eyebrow">
+   o <p class="section-label"> agregando la clase "underline-draw". */
+.underline-draw {
+  position: relative;
+  padding-bottom: .6rem;
+}
+.underline-draw::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: currentColor;
+  transition: width .6s cubic-bezier(.16, 1, .3, 1) .15s;
+}
+.reveal.is-visible.underline-draw::after { width: 2.5rem; }
+
+/* ---------- 4) Entrada con rebote del botón flotante de WhatsApp ----------
+   En vez de aparecer estático, entra con un pequeño rebote al
+   cargar la página. El pulso (wa-pulse) ya existente sigue igual. */
+.btn-whatsapp {
+  animation: wa-bounce-in .6s cubic-bezier(.34, 1.56, .64, 1) .8s both;
+}
+@keyframes wa-bounce-in {
+  0%   { transform: scale(0) translateY(20px); opacity: 0; }
+  70%  { transform: scale(1.08) translateY(-4px); opacity: 1; }
+  100% { transform: scale(1) translateY(0); }
+}
+
+/* ---------- 5) Ripple (onda) al hacer clic en botones ----------
+   Requiere el pequeño helper en main.js que agrega un <span
+   class="ripple"> con la posición del clic. Funciona en
+   .btn-primary, .btn-outline y .btn-whatsapp-sm. */
+.btn-primary, .btn-outline, .btn-whatsapp-sm {
+  position: relative;
+  overflow: hidden;
+}
+.ripple {
+  position: absolute;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, .55);
+  transform: scale(0);
+  animation: ripple-effect .6s ease-out forwards;
+  pointer-events: none;
+}
+@keyframes ripple-effect {
+  to { transform: scale(2.8); opacity: 0; }
+}
+
+/* ---------- 6) Shimmer de carga para imágenes con lazy-load ----------
+   Mientras la imagen no ha terminado de cargar (antes de que
+   main.js le agregue "is-loaded"), se ve un degradado animado
+   tipo skeleton en vez de un hueco vacío o solo el blur.
+   Uso: ya aplica automáticamente a toda <img class="reveal-img">. */
+img.reveal-img {
+  background: linear-gradient(100deg, #eceae5 30%, #f6f4f0 50%, #eceae5 70%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+}
+img.reveal-img.is-loaded {
+  animation: none;
+  background: none;
+}
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
 /* ---------- Respeto a "reducir movimiento" para todo lo nuevo ---------- */
 @media (prefers-reduced-motion: reduce) {
   body { animation: none; opacity: 1; }
@@ -450,7 +596,12 @@ img.reveal-img.is-loaded {
   .group.card-hover:hover { transform: none; }
   .icon-bounce:hover,
   .group:hover .icon-bounce { transform: none; }
-  img.reveal-img { filter: none; transform: none; transition: none; }
+  img.reveal-img { filter: none; transform: none; transition: none; animation: none; background: none; }
+  .ken-burns { animation: none; }
+  .shine-card::after { display: none; }
+  .underline-draw::after { transition: none; width: 2.5rem; }
+  .btn-whatsapp { animation: none; }
+  .ripple { display: none; }
 }
 /* ---------- Menú móvil: mejoras de UX (bloqueo scroll, animación burger) ---------- */
 body.menu-open {
@@ -485,6 +636,8 @@ body.menu-open {
 #mobile-menu {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  padding-top: calc(1.5rem + env(safe-area-inset-top, 0px));
+  padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
 }
 
 #mobile-menu a {

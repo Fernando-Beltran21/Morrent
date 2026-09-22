@@ -260,6 +260,24 @@ document.addEventListener("DOMContentLoaded", () => {
     updateUI();
   })();
 
+  // 6bis. Ripple al hacer clic en botones (.btn-primary, .btn-outline, .btn-whatsapp-sm)
+  const reduceMotionRipple = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduceMotionRipple) {
+    document.querySelectorAll(".btn-primary, .btn-outline, .btn-whatsapp-sm").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const rect = btn.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height) * 2;
+        const ripple = document.createElement("span");
+        ripple.className = "ripple";
+        ripple.style.width = ripple.style.height = `${size}px`;
+        ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
+        ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
+        btn.appendChild(ripple);
+        ripple.addEventListener("animationend", () => ripple.remove(), { once: true });
+      });
+    });
+  }
+
   // 7. Conteo animado para cifras destacadas (data-count-to="123")
   const countEls = document.querySelectorAll("[data-count-to]");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
