@@ -89,12 +89,45 @@ body {
 .section-label {
   font-family: 'JetBrains Mono', monospace;
   text-transform: uppercase;
-  font-size: .75rem;
-  letter-spacing: .25em;
+  font-size: .875rem;
+  letter-spacing: .2em;
 }
 
-.eyebrow { color: #E0531F; }
+.eyebrow { color: #e08f1f; }
 .section-label { color: #6E675D; }
+
+/* Eyebrow sobre imágenes: se agrega una "píldora" con fondo oscuro
+   semitransparente + blur para que el texto siempre tenga contraste,
+   sin importar la foto de fondo. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  padding: .5rem 1rem;
+  background: rgba(21, 19, 15, .55);
+  border-left: 2px solid currentColor;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* ---------- Textos pequeños: un poco más grandes, legibles y justificados ---------- */
+.text-xs {
+  font-size: .8125rem !important;
+  line-height: 1.4 !important;
+}
+.text-sm {
+  font-size: .95rem !important;
+  line-height: 1.55 !important;
+}
+.text-\[10px\] {
+  font-size: .75rem !important;
+}
+.text-xs,
+.text-sm {
+  text-align: justify;
+  text-justify: inter-word;
+}
 
 /* ---------- Botones ---------- */
 .btn-primary,
@@ -688,3 +721,20 @@ body.menu-open {
 }
 .site-header.header-transparent .nav-link.is-current { color: #F5B400; }
 .site-header.header-solid .nav-link.is-current { color: #E0531F; }
+
+/* ---------- Footer: letras un poco más grandes y en negritas ---------- */
+footer p,
+footer li,
+footer a,
+footer span {
+  font-weight: 700;
+}
+footer p,
+footer li,
+footer ul {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+}
+footer .text-xs {
+  font-size: .9rem !important;
+}
